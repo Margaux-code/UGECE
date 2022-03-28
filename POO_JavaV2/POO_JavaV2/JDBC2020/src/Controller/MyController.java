@@ -33,11 +33,15 @@ public class MyController {
     
      
     Client m_client;
-    
+    private films f;
     
 
     // toutes les methodes en static et les variables
-    public MyController() {
+    public MyController() throws SQLException, ClassNotFoundException {
+
+ Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
+
+      f = new films(c);// Chargement des films
       m_client=new Client();
     }
 
@@ -246,7 +250,7 @@ public class MyController {
     }
     
      public void AfficheInterfaceFilm(MyController c) {
-        InterfaceFilm PageFilm = new InterfaceFilm(c);
+        InterfaceFilm PageFilm = new InterfaceFilm(c,this.f);
         PageFilm.setVisible(true);
         PageFilm.pack();
         PageFilm.setLocationRelativeTo(null);
