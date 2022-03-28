@@ -19,22 +19,26 @@ public class Client {
     private String Membre = null;
     private String Facture = null;
     private Boolean Connecte = false;
-    
+    private String Id_reservation=null;
 
     
 
-    public void client(String us, String mail,String mdp, String Mem, String Fac) {
+    public void client(String us, String mail,String mdp, String Mem, String Fac,String Id_resa) {
         User = us;
         Mdp = mdp;
         Membre = Mem;
         Facture = Fac;
         Mail=mail;
+        Connecte=true;
+        Id_reservation=Id_resa;
     }
     public void afficheClient()
     {
-        System.out.print("Nom:"+User+" mdp:"+Mdp+" Membre:"+Membre+" Facture:"+Facture+" mail:"+Mail);
+        System.out.print("Nom:"+User+" mdp:"+Mdp+" Membre:"+Membre+" Facture:"+Facture+" mail:"+Mail+"resa:"+Id_reservation);
     }
-
+    public void setReservation(String Id_resa) {
+        this.Id_reservation = Id_resa;
+    }
     public void setUser(String us) {
         this.User = us;
     }

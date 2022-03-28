@@ -57,9 +57,11 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         SaisieUser = new javax.swing.JTextField();
         SaisieMdp = new javax.swing.JPasswordField();
         EnregistrerClient = new javax.swing.JButton();
-        AbonnementMembre = new javax.swing.JCheckBox();
         jLabel6 = new javax.swing.JLabel();
         SaisieMail = new javax.swing.JTextField();
+        AbonnementEnfant = new javax.swing.JCheckBox();
+        AbonnementRegulier = new javax.swing.JCheckBox();
+        AbonnementSenior = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +72,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         RetourInterfaceClient.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         RetourInterfaceClient.setForeground(new java.awt.Color(255, 255, 255));
         RetourInterfaceClient.setText("Retour");
-        RetourInterfaceClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RetourInterfaceClient.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         RetourInterfaceClient.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 RetourInterfaceClientMouseClicked(evt);
@@ -88,7 +90,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(45, 45, 45)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 161, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 182, Short.MAX_VALUE)
                 .addComponent(RetourInterfaceClient)
                 .addGap(51, 51, 51))
         );
@@ -134,15 +136,6 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
             }
         });
 
-        AbonnementMembre.setBackground(new java.awt.Color(18, 30, 49));
-        AbonnementMembre.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        AbonnementMembre.setText("Enfant");
-        AbonnementMembre.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AbonnementMembreMouseClicked(evt);
-            }
-        });
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Adresse e-mail:");
@@ -151,6 +144,41 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         SaisieMail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 SaisieMailActionPerformed(evt);
+            }
+        });
+
+        AbonnementEnfant.setBackground(new java.awt.Color(153, 153, 153));
+        AbonnementEnfant.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        AbonnementEnfant.setForeground(new java.awt.Color(255, 255, 255));
+        AbonnementEnfant.setText("Enfant");
+        AbonnementEnfant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AbonnementEnfantMouseClicked(evt);
+            }
+        });
+
+        AbonnementRegulier.setBackground(new java.awt.Color(153, 153, 153));
+        AbonnementRegulier.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        AbonnementRegulier.setForeground(new java.awt.Color(255, 255, 255));
+        AbonnementRegulier.setText("Régulier");
+        AbonnementRegulier.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AbonnementRegulierMouseClicked(evt);
+            }
+        });
+
+        AbonnementSenior.setBackground(new java.awt.Color(153, 153, 153));
+        AbonnementSenior.setFont(new java.awt.Font("Dialog", 0, 15)); // NOI18N
+        AbonnementSenior.setForeground(new java.awt.Color(255, 255, 255));
+        AbonnementSenior.setText("Senior");
+        AbonnementSenior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AbonnementSeniorMouseClicked(evt);
+            }
+        });
+        AbonnementSenior.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AbonnementSeniorActionPerformed(evt);
             }
         });
 
@@ -163,18 +191,22 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(EnregistrerClient)
-                    .addComponent(AbonnementMembre)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel5)
                             .addComponent(jLabel4)
                             .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SaisieMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(SaisieUser)
-                            .addComponent(SaisieMail))))
-                .addContainerGap(86, Short.MAX_VALUE))
+                            .addComponent(SaisieMail)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(AbonnementRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(AbonnementSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(AbonnementEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,11 +227,14 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(SaisieMdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(AbonnementMembre)
+                .addGap(32, 32, 32)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AbonnementEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AbonnementSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AbonnementRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
                 .addComponent(EnregistrerClient, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 32, Short.MAX_VALUE))
+                .addGap(0, 37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -225,11 +260,18 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         recupMdp=String.valueOf(SaisieMdp.getPassword());
         recupMail=SaisieMail.getText();
         recupUser=SaisieUser.getText();
+        
         try {
             m_controler.inscription(recupUser,recupMail,recupAbonnement,"non",recupMdp,m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
+         try {
+             m_controler.CookieClient(SaisieMail.getText(), m_controler);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.dispose();
         this.dispose();
         
     }//GEN-LAST:event_EnregistrerClientActionPerformed
@@ -241,11 +283,6 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         m_controler.AfficheInterfaceClient(m_controler);
     }//GEN-LAST:event_RetourInterfaceClientMouseClicked
 
-    private void AbonnementMembreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementMembreMouseClicked
-        // TODO add your handling code here:
-        this.recupAbonnement="Enfant";
-    }//GEN-LAST:event_AbonnementMembreMouseClicked
-
     private void SaisieUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisieUserActionPerformed
         // TODO add your handling code here:
         
@@ -255,6 +292,25 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_SaisieMailActionPerformed
+
+    private void AbonnementSeniorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbonnementSeniorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AbonnementSeniorActionPerformed
+
+    private void AbonnementEnfantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementEnfantMouseClicked
+        // TODO add your handling code here:
+        this.recupAbonnement="Enfant";
+    }//GEN-LAST:event_AbonnementEnfantMouseClicked
+
+    private void AbonnementSeniorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementSeniorMouseClicked
+        // TODO add your handling code here:
+        this.recupAbonnement="Senior";
+    }//GEN-LAST:event_AbonnementSeniorMouseClicked
+
+    private void AbonnementRegulierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementRegulierMouseClicked
+        // TODO add your handling code here:
+        this.recupAbonnement="Regulier";
+    }//GEN-LAST:event_AbonnementRegulierMouseClicked
     public Boolean getConnecte()
     {
         return Connecte;
@@ -311,7 +367,9 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JCheckBox AbonnementMembre;
+    private javax.swing.JCheckBox AbonnementEnfant;
+    private javax.swing.JCheckBox AbonnementRegulier;
+    private javax.swing.JCheckBox AbonnementSenior;
     private javax.swing.JButton EnregistrerClient;
     private javax.swing.JLabel RetourInterfaceClient;
     private javax.swing.JTextField SaisieMail;

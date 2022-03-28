@@ -204,6 +204,11 @@ public class InterfaceConnexion extends javax.swing.JFrame {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
+        try {
+             m_controler.CookieClient(SaisieMail.getText(), m_controler);
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
         
     }//GEN-LAST:event_ButtonConnexionClientMouseClicked

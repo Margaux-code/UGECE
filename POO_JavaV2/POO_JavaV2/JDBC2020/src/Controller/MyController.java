@@ -38,7 +38,7 @@ public class MyController {
 
     // toutes les methodes en static et les variables
     public MyController() {
-
+      m_client=new Client();
     }
 
     public static void main(String[] s) throws SQLException, ClassNotFoundException {
@@ -50,13 +50,54 @@ public class MyController {
     public Client GetClient() {
         return m_client;
     }
-    public void setClient(String User,String mail, String mdp, String membre, String Facture )
+    public void setClient(String User,String mail, String mdp, String membre, String Facture, String Id_resa )
     {
         m_client.setUser(User);
         m_client.setMail(mail);
         m_client.setMdp(mdp);
         m_client.setMembre(membre);
         m_client.setFacture(Facture);
+        m_client.setReservation(Id_resa);
+    }
+    //on garde les informations du client connecté dans notre controler
+    public void CookieClient(String mail, MyController Control)throws SQLException, ClassNotFoundException
+    {
+         ResultSet test;
+         String us;
+         String mdp;
+         String membre;
+         String facture;
+         String Id_resa;
+        Connexion c = new Connexion("bdd ugece", "root", "");
+        Connection con = (Connection) c.getConnection();
+        PreparedStatement stmt;
+        String sql="SELECT * FROM clients WHERE Mail=?";
+        stmt=con.prepareStatement(sql);
+        try{
+            stmt.setString(1,mail);
+            test=stmt.executeQuery();
+            if(test.next())
+            {
+                //on recupere les infos du client à partir de la bdd pour set les données de notre client
+                us=test.getString("User");
+                mdp=test.getString("Password");
+                membre=test.getString("Membre");
+                facture=test.getString("Facture");
+                Id_resa=test.getString("Id_reservation");
+                //on initialise un client connecte
+               Control.setClient(us, mail, mdp, membre, facture,Id_resa);
+               m_client.afficheClient();
+                ///renvoyé dans le cinéma
+                //controller.affichecinema();
+            }
+            else{
+                //JOptionPane.showMessageDialog(null,"Client pas connecté");
+                //AfficheInterfaceConnexion(control);
+                
+            }}catch(SQLException e){
+            System.out.println("inscription ratée");
+        }
+        
     }
     //on inscrit un nouveau client dans la table client
     public void inscription(String us,String mail, String membre, String facture, String mdp, MyController control) throws SQLException, ClassNotFoundException {
@@ -102,6 +143,7 @@ public class MyController {
             {
                 JOptionPane.showMessageDialog(null,"Client connecté");
                 AfficheInterfaceFilm(control);
+               //m_client.afficheClient();
                 ///renvoyé dans le cinéma
                 //controller.affichecinema();
             }

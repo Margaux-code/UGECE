@@ -162,6 +162,7 @@ public class InterfaceClient extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -186,12 +187,13 @@ public class InterfaceClient extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
+        /*Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new InterfaceClient(m_controler).setVisible(true);
             }
         });
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
