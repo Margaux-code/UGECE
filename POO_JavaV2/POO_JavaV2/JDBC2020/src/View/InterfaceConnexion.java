@@ -11,7 +11,7 @@ package View;
 
 
 
-import Controller.Controller;
+import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,12 +23,13 @@ import java.util.logging.Logger;
  * @author matth
  */
 public class InterfaceConnexion extends javax.swing.JFrame {
-
+     MyController m_controler;
     /**
      * Creates new form InterfaceConnexion
      */
-    public InterfaceConnexion() {
+    public InterfaceConnexion(MyController c) {
         initComponents();
+        m_controler=c;
         
     }
 
@@ -191,7 +192,7 @@ public class InterfaceConnexion extends javax.swing.JFrame {
     private void RetourClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetourClientMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheInterfaceClient();
+        m_controler.AfficheInterfaceClient(m_controler);
         
     }//GEN-LAST:event_RetourClientMouseClicked
 
@@ -199,7 +200,7 @@ public class InterfaceConnexion extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         try {
-            Controller.Connexion(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()));
+            m_controler.checkLoginMdp(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()),m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -207,41 +208,7 @@ public class InterfaceConnexion extends javax.swing.JFrame {
         
     }//GEN-LAST:event_ButtonConnexionClientMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfaceConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfaceConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfaceConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfaceConnexion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InterfaceConnexion().setVisible(true);
-                
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonConnexionClient;

@@ -8,7 +8,7 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
  */
 package View;
 
-import Controller.Controller;
+import Controller.MyController;
 
 
 /**
@@ -16,12 +16,13 @@ import Controller.Controller;
  * @author matth
  */
 public class InterfaceClient extends javax.swing.JFrame {
-
+     MyController m_controler;
     /**
      * Creates new form InterfaceClient
      */
-    public InterfaceClient() {
+    public InterfaceClient(MyController c) {
         initComponents();
+        m_controler=c;
     }
 
     /**
@@ -142,26 +143,26 @@ public class InterfaceClient extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.dispose();
-        Controller.AfficheInterfaceInscription();
+        m_controler.AfficheInterfaceInscription(m_controler);
     }//GEN-LAST:event_ButtonIncsriptionClientActionPerformed
 
     private void BoutonConnexionClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonConnexionClientActionPerformed
         // TODO add your handling code here:
        
         this.dispose();
-        Controller.AfficheInterfaceConnexion();
+        m_controler.AfficheInterfaceConnexion(m_controler);
     }//GEN-LAST:event_BoutonConnexionClientActionPerformed
 
     private void RetourAccueilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetourAccueilMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheAccueil();
+        m_controler.AfficheAccueil(m_controler);
     }//GEN-LAST:event_RetourAccueilMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -188,7 +189,7 @@ public class InterfaceClient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceClient().setVisible(true);
+                new InterfaceClient(m_controler).setVisible(true);
             }
         });
     }

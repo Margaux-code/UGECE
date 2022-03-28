@@ -7,7 +7,7 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 //interface faite en utilisant les outils "Design" de Netbeans
  */
 package View;
-import Controller.Controller;
+import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,12 +18,13 @@ import java.util.logging.Logger;
  * @author matth
  */
 public class InterfaceEmployé extends javax.swing.JFrame {
-
+   MyController m_controler;
     /**
      * Creates new form InterfaceEmployé
      */
-    public InterfaceEmployé() {
+    public InterfaceEmployé(MyController c) {
         initComponents();
+        m_controler=c;
     }
 
     /**
@@ -171,7 +172,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
     private void RetourAccueilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetourAccueilMouseClicked
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheAccueil();
+        m_controler.AfficheAccueil(m_controler);
 
     }//GEN-LAST:event_RetourAccueilMouseClicked
 
@@ -186,7 +187,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
     private void ButtonConnexionClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonConnexionClientMouseClicked
         // TODO add your handling code here:
         try {
-            Controller.ConnexionEmploye(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()));
+            m_controler.ConnexionEmploye(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()),m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -197,7 +198,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -224,7 +225,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceEmployé().setVisible(true);
+                new InterfaceEmployé(m_controler).setVisible(true);
             }
         });
     }

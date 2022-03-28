@@ -7,19 +7,20 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 //interface faite en utilisant les outils "Design" de Netbeans
  */
 package View;
-import Controller.Controller;
+import Controller.MyController;
 
 /**
  *
  * @author mahtt
  */
 public class Accueil extends javax.swing.JFrame {
-
+     MyController m_controler;
     /**
      * Creates new form Accueille
      */
-    public Accueil() {
+    public Accueil(MyController c) {
         initComponents();
+        m_controler=c;
     }
 
     /**
@@ -151,33 +152,33 @@ public class Accueil extends javax.swing.JFrame {
 
     private void ButtonInterfaceClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInterfaceClientActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-        Controller.AfficheInterfaceClient();
+        this.dispose();     
+        m_controler.AfficheInterfaceClient(m_controler);
     }//GEN-LAST:event_ButtonInterfaceClientActionPerformed
 
     private void BoutonInterfaceEmployeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonInterfaceEmployeActionPerformed
         // TODO add your handling code here:
         
         this.dispose();
-        Controller.AfficheInterfaceEmploye();
+        m_controler.AfficheInterfaceEmploye(m_controler);
     }//GEN-LAST:event_BoutonInterfaceEmployeActionPerformed
 
     private void BoutonInterfaceCinemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonInterfaceCinemaActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheInterfaceFilm();
+        m_controler.AfficheInterfaceFilm(m_controler);
     }//GEN-LAST:event_BoutonInterfaceCinemaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheInterfaceModifEmployé();
+        m_controler.AfficheInterfaceModifEmployé(m_controler);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -205,7 +206,7 @@ public class Accueil extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Accueil().setVisible(true);
+                new Accueil(m_controler).setVisible(true);
             }
         });
     }

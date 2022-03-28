@@ -8,7 +8,7 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
  */
 package View;
 
-import Controller.Controller;
+import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,7 +17,7 @@ import java.util.logging.Logger;
  * @author matth
  */
 public class InterfaceInscriptionClient extends javax.swing.JFrame {
-
+   MyController m_controler;
     /**
      * Creates new form InterfaceInscriptionClient
      */
@@ -29,13 +29,14 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
     private String recupFact;
     private Boolean Connecte;
     
-    public InterfaceInscriptionClient() {
+    public InterfaceInscriptionClient(MyController c) {
         initComponents();
         recupAbonnement=null;
         recupMdp=null;
         recupMail=null;
         recupFact=null;
         Boolean Connecte=false;
+        m_controler=c;
     }
 
     /**
@@ -225,7 +226,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         recupMail=SaisieMail.getText();
         recupUser=SaisieUser.getText();
         try {
-            Controller.inscription(recupUser,recupMail,recupAbonnement,"non",recupMdp);
+            m_controler.inscription(recupUser,recupMail,recupAbonnement,"non",recupMdp,m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -237,7 +238,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         this.dispose();
-        Controller.AfficheInterfaceClient();
+        m_controler.AfficheInterfaceClient(m_controler);
     }//GEN-LAST:event_RetourInterfaceClientMouseClicked
 
     private void AbonnementMembreMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementMembreMouseClicked
@@ -277,7 +278,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -304,7 +305,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceInscriptionClient().setVisible(true);
+                new InterfaceInscriptionClient(m_controler).setVisible(true);
             }
         });
     }

@@ -6,19 +6,20 @@
 
 
 package View;
-import Controller.Controller;
+import Controller.MyController;
 
 /**
  *
  * @author vdrcy
  */
 public class InterfaceFilm extends javax.swing.JFrame {
-
+  MyController m_controler;
     /**
      * Creates new form InterfaceFilm
      */
-    public InterfaceFilm() {
+    public InterfaceFilm(MyController c) {
         initComponents();
+        m_controler=c;
     }
 
 //    public void close(){
@@ -374,7 +375,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
     private void retourAcceuilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_retourAcceuilActionPerformed
         // TODO add your handling code here:
         this.dispose();
-        Controller.AfficheAccueil();
+        m_controler.AfficheAccueil(m_controler);
 
     }//GEN-LAST:event_retourAcceuilActionPerformed
 
@@ -405,7 +406,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -433,7 +434,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceFilm().setVisible(true);
+                new InterfaceFilm(m_controler).setVisible(true);
             }
         });
     }
