@@ -86,7 +86,7 @@ public class MyController {
                 Id_resa=test.getString("Id_reservation");
                 //on initialise un client connecte
                Control.setClient(us, mail, mdp, membre, facture,Id_resa);
-               m_client.afficheClient();
+               //m_client.afficheClient();
                 ///renvoyé dans le cinéma
                 //controller.affichecinema();
             }
