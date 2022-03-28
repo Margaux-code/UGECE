@@ -229,6 +229,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
+        this.dispose();
         
     }//GEN-LAST:event_EnregistrerClientActionPerformed
 

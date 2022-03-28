@@ -16,6 +16,7 @@ import javax.swing.JFrame;
 import View.InterfaceClient;
 import View.InterfaceInscriptionClient;
 import Model.Client;
+import Model.films;
 import javax.swing.JOptionPane;
 import View.Accueil;
 import View.InterfaceConnexion;
@@ -30,8 +31,9 @@ import View.InterfaceModifEmployé;
 public class Controller {
 
     
-
+     
     Client m_client;
+    
 
     // toutes les methodes en static et les variables
     public Controller() {
@@ -39,6 +41,8 @@ public class Controller {
     }
 
     public static void main(String[] s) throws SQLException, ClassNotFoundException {
+        
+        
         AfficheAccueil();
     }
 
@@ -58,7 +62,7 @@ public class Controller {
         
 
         
-        Connexion c = new Connexion("projet", "root", "");
+        Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         //Static String us=m_client.getUser();
         
@@ -77,13 +81,14 @@ public class Controller {
         }catch(SQLException e){
             System.out.println("inscription ratée");
         }
+        AfficheInterfaceFilm();
          
       
     }
     // On verifie dans la table client si le mdp et le mail correspondent pour la connexion
     public static void Connexion(String mail, String mdp)throws SQLException, ClassNotFoundException 
     {    ResultSet test;
-        Connexion c = new Connexion("projet", "root", "");
+        Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         PreparedStatement stmt;
         String sql="SELECT * FROM clients WHERE Mail=? and Password=?";
@@ -95,22 +100,25 @@ public class Controller {
             if(test.next())
             {
                 JOptionPane.showMessageDialog(null,"Client connecté");
+                AfficheInterfaceFilm();
                 ///renvoyé dans le cinéma
                 //controller.affichecinema();
             }
             else{
                 JOptionPane.showMessageDialog(null,"Client pas connecté");
+                AfficheInterfaceConnexion();
                 
             }
             
         }catch(SQLException e){
             System.out.println("inscription ratée");
         }
+        
     }
     //dans la table client permet d'ajouter une reservation si on connait le user
     public static void AjouterReservation(int Id_Reservation,String user)throws SQLException, ClassNotFoundException 
     {    
-        Connexion c = new Connexion("projet", "root", "");
+        Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         PreparedStatement stmt;
         String sql="UPDATE clients SET Id_reservation=? WHERE user=?";
@@ -128,7 +136,7 @@ public class Controller {
     // On verifie dans la table employe si le mdp et le mail correspondent pour la connexion
     public static void ConnexionEmploye(String mail, String mdp)throws SQLException, ClassNotFoundException 
     {    ResultSet test;
-        Connexion c = new Connexion("projet", "root", "");
+        Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         PreparedStatement stmt;
         String sql="SELECT * FROM employe WHERE Mail=? and Password=?";
@@ -140,11 +148,12 @@ public class Controller {
             if(test.next())
             {
                 JOptionPane.showMessageDialog(null,"Employé connecté");
+                AfficheInterfaceFilm();
                 ///renvoyé dans le cinéma
             }
             else{
                 JOptionPane.showMessageDialog(null,"Employé pas connecté");
-                
+                AfficheInterfaceEmploye();
             }
             
         }catch(SQLException e){
