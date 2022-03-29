@@ -23,6 +23,12 @@ import View.InterfaceConnexion;
 import View.InterfaceEmployé;
 import View.InterfaceFilm;
 import View.InterfaceModifEmployé;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -250,7 +256,7 @@ public class MyController {
     }
     
      public void AfficheInterfaceFilm(MyController c) {
-        InterfaceFilm PageFilm = new InterfaceFilm(c,this.f);
+        InterfaceFilm PageFilm = new InterfaceFilm(c);
         PageFilm.setVisible(true);
         PageFilm.pack();
         PageFilm.setLocationRelativeTo(null);
@@ -263,5 +269,109 @@ public class MyController {
         ModifEmployé.setLocationRelativeTo(null);
         ModifEmployé.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+          public void AffichageFilm(javax.swing.JLabel LabelFilmID0,javax.swing.JLabel LabelFilmID1,javax.swing.JLabel LabelFilmID2,javax.swing.JLabel LabelFilmID3,javax.swing.JLabel LabelFilmID4,javax.swing.JLabel LabelFilmID5) {
+        AfficherFilm0(LabelFilmID0);
+
+        AfficherFilm1(LabelFilmID1);
+
+        AfficherFilm2(LabelFilmID2);
+
+        AfficherFilm3(LabelFilmID3);
+
+        AfficherFilm4(LabelFilmID4);
+
+        AfficherFilm5(LabelFilmID5);
+    }
+           public void AfficherFilm0(javax.swing.JLabel LabelFilmID0) {
+
+        try {
+            URL url = new URL(f.getURL(0));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID0.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void AfficherFilm1(javax.swing.JLabel LabelFilmID1) {
+
+        try {
+
+            URL url = new URL(f.getURL(1));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID1.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void AfficherFilm2(javax.swing.JLabel LabelFilmID2) {
+
+        try {
+            URL url = new URL(f.getURL(2));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID2.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {
+
+        try {
+            URL url = new URL(f.getURL(3));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID3.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void AfficherFilm4(javax.swing.JLabel LabelFilmID4) {
+
+        try {
+            URL url = new URL(f.getURL(4));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID4.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void AfficherFilm5(javax.swing.JLabel LabelFilmID5) {
+
+        try {
+            URL url = new URL(f.getURL(5));
+            BufferedImage c = ImageIO.read(url);
+            ImageIcon image = new ImageIcon(c);
+            LabelFilmID5.setIcon(image);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 }

@@ -20,16 +20,16 @@ import Model.films;
 public class InterfaceFilm extends javax.swing.JFrame {
 
     MyController m_controler;
-    private films film;
+    
 
     /**
      * Creates new form InterfaceFilm
      */
-    public InterfaceFilm(MyController c, films f) {
+    public InterfaceFilm(MyController c) {
         initComponents();
         m_controler = c;
-        film = f;
-        AffichageFilm();
+        
+        m_controler.AffichageFilm(LabelFilmID0,LabelFilmID1,LabelFilmID2,LabelFilmID3,LabelFilmID4,LabelFilmID5);
     }
 
 //    public void close(){
@@ -341,116 +341,14 @@ public class InterfaceFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceFilm(m_controler, film).setVisible(true);
+                new InterfaceFilm(m_controler).setVisible(true);
             }
         });
     }
 
-    public void AffichageFilm() {
-        AfficherFilm0();
+    
 
-        AfficherFilm1();
-
-        AfficherFilm2();
-
-        AfficherFilm3();
-
-        AfficherFilm4();
-
-        AfficherFilm5();
-    }
-
-    public void AfficherFilm0() {
-
-        try {
-            URL url = new URL(film.getURL(0));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID0.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void AfficherFilm1() {
-
-        try {
-
-            URL url = new URL(film.getURL(1));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID1.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void AfficherFilm2() {
-
-        try {
-            URL url = new URL(film.getURL(2));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID2.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void AfficherFilm3() {
-
-        try {
-            URL url = new URL(film.getURL(3));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID3.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void AfficherFilm4() {
-
-        try {
-            URL url = new URL(film.getURL(4));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID4.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    public void AfficherFilm5() {
-
-        try {
-            URL url = new URL(film.getURL(5));
-            BufferedImage c = ImageIO.read(url);
-            ImageIcon image = new ImageIcon(c);
-            LabelFilmID5.setIcon(image);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AfficheFilm1;
