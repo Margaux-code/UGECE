@@ -99,12 +99,6 @@ public class tarifs {
         stmt.execute(sql);
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        System.out.println("Hello, World!");
-        Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
-        tarifs f = new tarifs(c);// Chargement des films
-        f.setPleinTarif((10));
 
-    }
 }
 
