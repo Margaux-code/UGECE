@@ -30,6 +30,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
         m_controler = c;
         
         m_controler.AffichageFilm(LabelFilmID0,LabelFilmID1,LabelFilmID2,LabelFilmID3,LabelFilmID4,LabelFilmID5);
+        m_controler.AfficheClientConnecte(AffichageUserClient, m_controler);
     }
 
 //    public void close(){
@@ -52,6 +53,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
         ListeAvantage = new javax.swing.JButton();
         MesReservation = new javax.swing.JButton();
         retourAcceuil = new javax.swing.JButton();
+        AffichageUserClient = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -98,7 +101,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(363, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(titrePageFIlm, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(266, 266, 266))
         );
@@ -134,6 +137,16 @@ public class InterfaceFilm extends javax.swing.JFrame {
             }
         });
 
+        AffichageUserClient.setBackground(new java.awt.Color(153, 153, 153));
+        AffichageUserClient.setDisplayedMnemonic('[');
+        AffichageUserClient.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        AffichageUserClient.setText("On affiche le client");
+
+        jLabel2.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nom du client connecté:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -141,15 +154,21 @@ public class InterfaceFilm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ListeAvantage, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(MesReservation, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(retourAcceuil, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(ListeAvantage, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                        .addComponent(MesReservation, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+                        .addComponent(retourAcceuil, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                    .addComponent(AffichageUserClient, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(87, 87, 87)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AffichageUserClient, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
                 .addComponent(MesReservation)
                 .addGap(35, 35, 35)
                 .addComponent(ListeAvantage)
@@ -459,6 +478,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AffichageUserClient;
     private javax.swing.JPanel AfficheFilm1;
     private javax.swing.JPanel AfficheFilm2;
     private javax.swing.JPanel AfficheFilm3;
@@ -480,6 +500,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
     private javax.swing.JButton afficherFilm5;
     private javax.swing.JButton afficherFilm6;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

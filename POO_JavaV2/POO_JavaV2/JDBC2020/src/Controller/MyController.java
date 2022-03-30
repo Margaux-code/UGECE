@@ -24,6 +24,7 @@ import View.InterfaceEmployé;
 import View.InterfaceFilm;
 import View.InfoFilm;
 import View.InterfaceModifEmployé;
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -129,6 +130,7 @@ public class MyController {
         } catch (SQLException e) {
             System.out.println("inscription ratée");
         }
+        CookieClient(mail,control);
         AfficheInterfaceFilm(control);
 
     }
@@ -147,6 +149,7 @@ public class MyController {
             test = stmt.executeQuery();
             if (test.next()) {
                 JOptionPane.showMessageDialog(null, "Client connecté");
+                CookieClient(mail,control);
                 AfficheInterfaceFilm(control);
                 //m_client.afficheClient();
                 ///renvoyé dans le cinéma
@@ -194,7 +197,7 @@ public class MyController {
             test = stmt.executeQuery();
             if (test.next()) {
                 JOptionPane.showMessageDialog(null, "Employé connecté");
-                AfficheInterfaceFilm(control);
+                AfficheInterfaceModifEmployé(control);
                 ///renvoyé dans le cinéma
             } else {
                 JOptionPane.showMessageDialog(null, "Employé pas connecté");
@@ -269,17 +272,24 @@ public class MyController {
     }
 
     public void AffichageInfoFilm(MyController c, int id) {
-        javax.swing.JLabel LabelAffiche=new javax.swing.JLabel();
-        InfoFilm InterfaceInfoFilm = new InfoFilm(c,"Affichage Film",f.getGenre(id),f.getIntrigue(id),f.getRealisateur(id),f.getActeur(id),id);
+        javax.swing.JLabel LabelAffiche = new javax.swing.JLabel();
+        InfoFilm InterfaceInfoFilm = new InfoFilm(c, "Affichage Film", f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id);
         InterfaceInfoFilm.setVisible(true);
         InterfaceInfoFilm.pack();
         InterfaceInfoFilm.setLocationRelativeTo(null);
         InterfaceInfoFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        
-        
+
     }
-    
+
+    public void AfficheClientConnecte(javax.swing.JLabel Bouton, MyController control) {
+        if (control.GetClient().getUser() == null) {
+            Bouton.setForeground(Color.white);
+            Bouton.setText("Pas Connecté");
+        } else {
+           Bouton.setForeground(Color.white);
+           Bouton.setText(control.GetClient().getUser());
+        }
+    }
 
     public void AffichageFilm(javax.swing.JLabel LabelFilmID0, javax.swing.JLabel LabelFilmID1, javax.swing.JLabel LabelFilmID2, javax.swing.JLabel LabelFilmID3, javax.swing.JLabel LabelFilmID4, javax.swing.JLabel LabelFilmID5) {
         AfficherFilm0(LabelFilmID0);
@@ -294,34 +304,28 @@ public class MyController {
 
         AfficherFilm5(LabelFilmID5);
     }
-   public void ChoisirFilm(int id,MyController control,javax.swing.JLabel LabelFilm)
-   {
-       if(id==0)
-       {
-           control.AfficherFilm0(LabelFilm);
-       }
-        if(id==1)
-       {
-           control.AfficherFilm1(LabelFilm);
-       }
-         if(id==2)
-       {
-           control.AfficherFilm2(LabelFilm);
-       }
-          if(id==3)
-       {
-           control.AfficherFilm3(LabelFilm);
-       }
-           if(id==4)
-       {
-           control.AfficherFilm4(LabelFilm);
-       }
-            if(id==5)
-       {
-           control.AfficherFilm5(LabelFilm);
-       }
-   }
-           
+
+    public void ChoisirFilm(int id, MyController control, javax.swing.JLabel LabelFilm) {
+        if (id == 0) {
+            control.AfficherFilm0(LabelFilm);
+        }
+        if (id == 1) {
+            control.AfficherFilm1(LabelFilm);
+        }
+        if (id == 2) {
+            control.AfficherFilm2(LabelFilm);
+        }
+        if (id == 3) {
+            control.AfficherFilm3(LabelFilm);
+        }
+        if (id == 4) {
+            control.AfficherFilm4(LabelFilm);
+        }
+        if (id == 5) {
+            control.AfficherFilm5(LabelFilm);
+        }
+    }
+
     public void AfficherFilm0(javax.swing.JLabel LabelFilmID0) {
 
         try {
