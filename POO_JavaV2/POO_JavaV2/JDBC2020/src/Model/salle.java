@@ -39,8 +39,6 @@ public class salle {
     private ArrayList<Integer> m_places_libre = new ArrayList<>();
     private ArrayList<String> m_date = new ArrayList<>();
     private ArrayList<Integer> m_ID_film = new ArrayList<>();
-    
-    
 
     // Constructeur pour charger les salles qui existent déjà
     public salle(Connexion co) throws SQLException {
@@ -102,26 +100,39 @@ public class salle {
         }
 
     }
+
     //Fonction qui renvoie tous les IDs des salles contenant le film demandé 
-    public ArrayList<Integer> getResa_film(int id_film)
-    {
+    public ArrayList<Integer> getResa_film(int id_film) {
         ArrayList<Integer> salle_avec_film = new ArrayList<>();
-        for (int i =0 ; i<this.m_ID_salle.size();i++)
-        {
-            if (this.m_ID_film.get(i) == id_film)
-            {
+        for (int i = 0; i < this.m_ID_salle.size(); i++) {
+            if (this.m_ID_film.get(i) == id_film) {
                 salle_avec_film.add(this.m_ID_salle.get(i));
             }
         }
         return salle_avec_film;
-        
+
     }
+
     //Cette fonction enlève une place libre à une salle
     public void prendre_une_place(int ID_salle) {
         int Nouveau = this.m_places_libre.get(ID_salle) - 1;
         this.m_places_libre.set(ID_salle, Nouveau);
     }
-    
-    
+    //Getter 
+    public Integer get_places_totales(Integer ID_salle) {
+        return this.m_places_totales.get(ID_salle);
+    }
+
+    public Integer get_places_libres(Integer Id_salle) {
+        return this.m_places_libre.get(Id_salle);
+    }
+
+    public String get_date(Integer Id_salle) {
+        return this.m_date.get(Id_salle);
+    }
+
+    public Integer get_ID_film(Integer Id_salle) {
+        return this.m_ID_film.get(Id_salle);
+    }
 
 }

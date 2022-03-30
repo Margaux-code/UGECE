@@ -47,7 +47,8 @@ public class reservations {
 
         }
 
-    }
+    }    
+    
     
     
     //  créer une nouvelle réservation
@@ -74,7 +75,7 @@ public class reservations {
             System.out.println(e);
         }
     }
-      
+    //Fonction pour pouvoir faire des stats  
     public ArrayList<Integer> getPrix()
     {
         return this.m_ID_tarif;

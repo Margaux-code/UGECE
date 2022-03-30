@@ -149,9 +149,9 @@ public class films {
         return this.url_image.get(id);
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    /*public static void main(String[] args) throws SQLException, ClassNotFoundException {
         System.out.println("Hello, World!");
         Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
         films f = new films(c);// Chargement des films
-    }
+    }*/
 }
