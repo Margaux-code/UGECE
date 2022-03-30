@@ -273,7 +273,7 @@ public class MyController {
 
     public void AffichageInfoFilm(MyController c, int id) {
         javax.swing.JLabel LabelAffiche = new javax.swing.JLabel();
-        InfoFilm InterfaceInfoFilm = new InfoFilm(c, "Affichage Film", f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id);
+        InfoFilm InterfaceInfoFilm = new InfoFilm(c, f.getNom(id), f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id, f.getAnnee(id));
         InterfaceInfoFilm.setVisible(true);
         InterfaceInfoFilm.pack();
         InterfaceInfoFilm.setLocationRelativeTo(null);

@@ -20,30 +20,33 @@ import Model.films;
 public class InfoFilm extends javax.swing.JFrame {
 
     MyController m_controler;
-    String m_titre;
+    String m_Nom;
     String m_Genre;
     String m_Intrigue;
     String m_Realisateur;
     String m_Acteur;
     int m_id;
+    int m_Annee;
 
     /**
      * Creates new form InfoFilm
      */
-    public InfoFilm(MyController c, String Titre, String Genre, String Intrigue, String Realisateur, String Acteur, int id) {
+    public InfoFilm(MyController c, String Nom, String Genre, String Intrigue, String Realisateur, String Acteur, int id, int Annee) {
         initComponents();
         m_controler = c;
-        m_titre = Titre;
+        m_Nom = Nom;
         m_Genre = Genre;
         m_Intrigue = Intrigue;
         m_Realisateur = Realisateur;
         m_Acteur = Acteur;
         m_id = id;
-        LabelTitre.setText(Titre);
+        m_Annee = Annee;
+        LabelTitre.setText(Nom);
         LabelGenre.setText(Genre);
         LabelIntrigue.setText(Intrigue);
         LabelRealisateur.setText(Realisateur);
         LabelActeur.setText(Acteur);
+        //LabelAnnee.setText(Annee); c'est pas un string
         m_controler.ChoisirFilm(id, m_controler, LabelUrl);
     }
 
@@ -64,7 +67,7 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelIntrigue = new javax.swing.JLabel();
         LabelRealisateur = new javax.swing.JLabel();
         LabelActeur = new javax.swing.JLabel();
-        LabelDate = new javax.swing.JLabel();
+        LabelAnnee = new javax.swing.JLabel();
         LabelTitre = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,7 +83,7 @@ public class InfoFilm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(355, 355, 355)
                 .addComponent(jLabel1)
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -97,12 +100,17 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelGenre.setText("Genre");
 
         LabelIntrigue.setText("Intrigue");
+        LabelIntrigue.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelIntrigueMouseClicked(evt);
+            }
+        });
 
         LabelRealisateur.setText("Realisateur");
 
         LabelActeur.setText("Acteur");
 
-        LabelDate.setText("Date");
+        LabelAnnee.setText("Date");
 
         LabelTitre.setText("Titre");
 
@@ -116,12 +124,12 @@ public class InfoFilm extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelGenre)
-                    .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(LabelDate)
+                    .addComponent(LabelAnnee)
                     .addComponent(LabelActeur)
                     .addComponent(LabelIntrigue)
-                    .addComponent(LabelRealisateur))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LabelRealisateur)
+                    .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(503, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,7 +150,7 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(LabelActeur)
                         .addGap(72, 72, 72)
-                        .addComponent(LabelDate)))
+                        .addComponent(LabelAnnee)))
                 .addContainerGap(200, Short.MAX_VALUE))
         );
 
@@ -163,6 +171,10 @@ public class InfoFilm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void LabelIntrigueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelIntrigueMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LabelIntrigueMouseClicked
    
 
     /**
@@ -195,14 +207,14 @@ public class InfoFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InfoFilm(m_controler, m_titre, m_Genre,m_Intrigue,m_Realisateur,m_Acteur, m_id).setVisible(true);
+                new InfoFilm(m_controler, m_Nom, m_Genre,m_Intrigue,m_Realisateur,m_Acteur, m_id,m_Annee).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelActeur;
-    private javax.swing.JLabel LabelDate;
+    private javax.swing.JLabel LabelAnnee;
     private javax.swing.JLabel LabelGenre;
     private javax.swing.JLabel LabelIntrigue;
     private javax.swing.JLabel LabelRealisateur;

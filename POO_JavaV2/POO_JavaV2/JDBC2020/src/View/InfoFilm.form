@@ -51,7 +51,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="355" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="522" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -89,13 +89,13 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="LabelGenre" min="-2" max="-2" attributes="0"/>
-                      <Component id="LabelTitre" min="-2" pref="84" max="-2" attributes="0"/>
-                      <Component id="LabelDate" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelAnnee" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelActeur" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelIntrigue" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelRealisateur" min="-2" max="-2" attributes="0"/>
+                      <Component id="LabelTitre" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="503" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -119,7 +119,7 @@
                           <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                           <Component id="LabelActeur" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
-                          <Component id="LabelDate" min="-2" max="-2" attributes="0"/>
+                          <Component id="LabelAnnee" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="200" max="32767" attributes="0"/>
@@ -142,6 +142,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Intrigue"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LabelIntrigueMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="LabelRealisateur">
           <Properties>
@@ -153,7 +156,7 @@
             <Property name="text" type="java.lang.String" value="Acteur"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="LabelDate">
+        <Component class="javax.swing.JLabel" name="LabelAnnee">
           <Properties>
             <Property name="text" type="java.lang.String" value="Date"/>
           </Properties>
