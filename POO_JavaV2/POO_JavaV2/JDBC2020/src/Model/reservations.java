@@ -49,6 +49,7 @@ public class reservations {
 
     }
     
+    
     //  créer une nouvelle réservation
     public void ajout_reservations(int ID_client, int ID_salle, int ID_tarif) {
 
@@ -74,7 +75,10 @@ public class reservations {
         }
     }
       
-
+    public ArrayList<Integer> getPrix()
+    {
+        return this.m_ID_tarif;
+    }
       
       
 }
