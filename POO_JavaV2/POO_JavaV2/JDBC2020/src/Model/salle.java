@@ -87,7 +87,6 @@ public class salle {
 
     //Cette fonction est private, car elle ne doit servir que à l'interieur de la classe pour sauvegarder les données dans la base 
     private void Sauvegarder(int ID_salle) throws SQLException {
-        
 
         try {
             this.sql = "DELETE FROM `salle` WHERE ID_salle = " + ID_salle;
@@ -102,14 +101,10 @@ public class salle {
 
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        System.out.println("Hello, World!");
-        Connexion c = new Connexion("bdd ugece", "root", "");
-        salle s = new salle(c);
-        String date = "15.06"; 
-        s.changer_film(20, date, 0);
-     
-
+    //Cette fonction enlève une place libre à une salle
+    public void prendre_une_place(int ID_salle) {
+        int Nouveau = this.m_places_libre.get(ID_salle) - 1;
+        this.m_places_libre.set(ID_salle, Nouveau);
     }
 
 }

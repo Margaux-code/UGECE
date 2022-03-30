@@ -73,12 +73,8 @@ public class reservations {
             System.out.println(e);
         }
     }
-      public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        System.out.println("Hello, World!");
-        Connexion c = new Connexion("bdd ugece", "root", "");
-      reservations r = new reservations(c);
-      r.ajout_reservations(13, 1, 4);
+      
 
-    }
-
+      
+      
 }
