@@ -73,13 +73,13 @@ public class films {
                 this.url_image.add(res.getString("url_images"));
                 this.acteurs.add(res.getString("Acteurs"));
                 //Afficher les valeurs
-                System.out.print("ID film: " + this.ID_film.get(i));
+               /* System.out.print("ID film: " + this.ID_film.get(i));
                  System.out.print("Acteurs: " + this.acteurs.get(i));
                 System.out.print(", Annee: " + this.annee.get(i));
                 System.out.print(", Nom: " + this.Nom.get(i));
                 System.out.print(", Genres: " + this.genres.get(i));
                 System.out.print(", Intrigue: " + this.intrigue.get(i));
-                System.out.println(", URL: " + this.url_image.get(i));
+                System.out.println(", URL: " + this.url_image.get(i));*/
                 i++;
             }
 
