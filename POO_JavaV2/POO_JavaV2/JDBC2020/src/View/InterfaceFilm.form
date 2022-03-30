@@ -54,8 +54,8 @@
               <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane2" pref="0" max="32767" attributes="0"/>
                   <Component id="jPanel1" max="32767" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="637" max="-2" attributes="0"/>
               </Group>
           </Group>
       </Group>
@@ -72,10 +72,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="362" max="-2" attributes="0"/>
                   <Component id="titrePageFIlm" min="-2" pref="402" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -140,7 +140,7 @@
                   <Component id="ListeAvantage" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
                   <Component id="retourAcceuil" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="985" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -220,6 +220,9 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+      <Properties>
+        <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
@@ -236,44 +239,27 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="AfficheFilm2" linkSize="5" max="32767" attributes="0"/>
-                                          <Component id="AfficheFilm3" linkSize="5" max="32767" attributes="0"/>
-                                          <Component id="AfficheFilm1" linkSize="5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Group type="102" attributes="0">
-                                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="afficherFilm3" min="-2" pref="219" max="-2" attributes="0"/>
-                                                  <Component id="afficherFilm5" min="-2" pref="219" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="110" max="-2" attributes="0"/>
-                                      <Component id="afficherFilm1" min="-2" pref="219" max="-2" attributes="0"/>
-                                  </Group>
+                              <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="AfficheFilm2" linkSize="5" max="32767" attributes="0"/>
+                                  <Component id="AfficheFilm3" linkSize="5" max="32767" attributes="0"/>
+                                  <Component id="AfficheFilm1" linkSize="5" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm1" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm3" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm5" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="AfficheFilm5" linkSize="5" max="32767" attributes="0"/>
                                   <Component id="AfficheFilm6" linkSize="5" max="32767" attributes="0"/>
-                                  <Component id="AfficheFilm4" linkSize="5" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="afficherFilm6" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="afficherFilm2" min="-2" pref="219" max="-2" attributes="0"/>
-                                          <Component id="afficherFilm4" min="-2" pref="219" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="AfficheFilm4" linkSize="5" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm4" max="32767" attributes="0"/>
+                                  <Component id="afficherFilm6" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="177" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="190" max="-2" attributes="0"/>
                               <Component id="jLabel1" min="-2" pref="426" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -284,17 +270,17 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="23" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Component id="AfficheFilm1" linkSize="7" min="-2" max="-2" attributes="0"/>
                           <Component id="AfficheFilm4" linkSize="7" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="afficherFilm1" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="afficherFilm2" alignment="3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="afficherFilm2" max="32767" attributes="0"/>
+                          <Component id="afficherFilm1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -302,21 +288,21 @@
                           <Component id="AfficheFilm5" linkSize="7" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="afficherFilm4" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="afficherFilm3" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="afficherFilm3" max="32767" attributes="0"/>
+                          <Component id="afficherFilm4" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="14" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="AfficheFilm3" linkSize="7" max="32767" attributes="0"/>
                           <Component id="AfficheFilm6" linkSize="7" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="afficherFilm5" min="-2" pref="16" max="-2" attributes="0"/>
-                          <Component id="afficherFilm6" min="-2" pref="16" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="afficherFilm5" max="32767" attributes="0"/>
+                          <Component id="afficherFilm6" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -456,7 +442,7 @@
             </Container>
             <Component class="javax.swing.JButton" name="afficherFilm1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="azertyui"/>
+                <Property name="text" type="java.lang.String" value="Le Voyage de Chihiro"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm1ActionPerformed"/>
@@ -464,7 +450,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="afficherFilm2">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Le Chateau Ambulant"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm2ActionPerformed"/>
@@ -472,7 +458,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="afficherFilm4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Iron Man"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm4ActionPerformed"/>
@@ -480,7 +466,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="afficherFilm3">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Your Name"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm3ActionPerformed"/>
@@ -488,7 +474,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="afficherFilm5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Les Gardiens de la Galaxie"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm5ActionPerformed"/>
@@ -496,7 +482,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="afficherFilm6">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton1"/>
+                <Property name="text" type="java.lang.String" value="Spider-Man: Homecoming"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afficherFilm6ActionPerformed"/>
