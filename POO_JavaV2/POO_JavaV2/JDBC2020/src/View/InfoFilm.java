@@ -18,7 +18,7 @@ import Model.films;
  * @author vdrcy
  */
 public class InfoFilm extends javax.swing.JFrame {
-
+    
     MyController m_controler;
     String m_Nom;
     String m_Genre;
@@ -46,8 +46,9 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelIntrigue.setText(Intrigue);
         LabelRealisateur.setText(Realisateur);
         LabelActeur.setText(Acteur);
-        //LabelAnnee.setint(Annee); c'est pas un string
+        LabelAnnee.setText(String.valueOf(Annee)); //comment afficher correctement un int
         m_controler.ChoisirFilm(id, m_controler, LabelUrl);
+        m_controler.ComboBoxInfoFilm(ComboBoxSalle);// on passe en paramètre ComboBoxSalle
         
     }
 
@@ -76,6 +77,7 @@ public class InfoFilm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        ComboBoxSalle = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -173,7 +175,8 @@ public class InfoFilm extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(LabelGenre)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -204,7 +207,9 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelAnnee)))
+                        .addComponent(LabelAnnee)
+                        .addGap(68, 68, 68)
+                        .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(RetourInfoFilm))
         );
@@ -236,7 +241,6 @@ public class InfoFilm extends javax.swing.JFrame {
         this.dispose();
         m_controler.AfficheInterfaceFilm(m_controler);
     }//GEN-LAST:event_RetourInfoFilmActionPerformed
-   
 
     /**
      * @param args the command line arguments
@@ -268,12 +272,13 @@ public class InfoFilm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InfoFilm(m_controler, m_Nom, m_Genre,m_Intrigue,m_Realisateur,m_Acteur, m_id,m_Annee).setVisible(true);
+                new InfoFilm(m_controler, m_Nom, m_Genre, m_Intrigue, m_Realisateur, m_Acteur, m_id, m_Annee).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> ComboBoxSalle;
     private javax.swing.JLabel LabelActeur;
     private javax.swing.JLabel LabelAnnee;
     private javax.swing.JLabel LabelGenre;

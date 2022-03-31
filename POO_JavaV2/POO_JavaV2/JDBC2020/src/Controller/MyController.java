@@ -8,7 +8,6 @@ package Controller;
 // liste de tous les imports que nous utilisons dans le projet
 import Controller.Connexion;
 
-
 //import model
 import Model.Client;// appel de la classe client
 import Model.films;// appel de la classe films
@@ -25,7 +24,6 @@ import View.InfoFilm;// affichage des informations d'un film
 import View.InterfaceModifEmployé;
 import View.InterfaceSalle;//affichage du début de la réservation ( après la sélection d'un salle)
 
-
 //java/javax
 import java.sql.SQLException;
 import java.sql.*;
@@ -40,7 +38,6 @@ import java.net.URL;// permet d'associé un string à un URL
 import javax.imageio.ImageIO;// associé l'url à un image
 import javax.swing.ImageIcon;// afficher l'image en type Icon
 
-
 /**
  *
  * @author matth
@@ -50,6 +47,7 @@ public class MyController {
     Client m_client;
     private films f;
     private tarifs m_tarif;
+    private salle s;
 
     // toutes les methodes en static et les variables
     public MyController() throws SQLException, ClassNotFoundException {
@@ -384,17 +382,17 @@ public class MyController {
     }
 
     public void MettreAJourPrixFilm(String PleinTarif, String PRegulier, String PSenior, String PEnfant) throws SQLException {
-           Integer PrixEnfant = Integer.valueOf(PEnfant);
-            Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
-            Integer PrixSenior = Integer.valueOf(PSenior);
-            Integer PrixRegulier = Integer.valueOf(PRegulier);
+        Integer PrixEnfant = Integer.valueOf(PEnfant);
+        Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
+        Integer PrixSenior = Integer.valueOf(PSenior);
+        Integer PrixRegulier = Integer.valueOf(PRegulier);
         if ((0 <= PrixPleinTarif) && (PrixPleinTarif <= 20) && (0 <= PrixEnfant) && (PrixEnfant <= 20) && (0 <= PrixSenior) && (PrixSenior <= 20) && (0 <= PrixRegulier) && (PrixRegulier <= 20)) {
             m_tarif.setPleinTarif(PrixPleinTarif);
             m_tarif.setEnfant(PrixEnfant);
             m_tarif.setSenior(PrixSenior);
             m_tarif.setRegulier(PrixRegulier);
-        
-    }
+
+        }
     }
 
     public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {
@@ -443,21 +441,33 @@ public class MyController {
     }
 
 // permettra de générer l'action d'un comboBox: içi la comboBox présent dans InfoFilm qui permet de sélectionner une classe
-public void ComboBoxInfoFilm()
-{
+    public void ComboBoxInfoFilm(javax.swing.JComboBox combobox) {
+/*for (int i = 0; i < film.getNoms().size(); i++) {
 
-}
+            ComboBox.addItem(film.getfilm(i));
+           // film.getfilm(i);
 
-public void InterfaceSalleView(MyController c, int id)
-{
+        }
+        ComboBox.setBounds(50, 50, 90, 20);
+        ComboBox.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // setTitre();
+
+                controlleur.getBigcontroller().infofilmcontroller(((film) ComboBox.getSelectedItem()).getID());
+            }
+        });*/
+    }
+
+    public void InterfaceSalleView(MyController c, int id) {
 //InterfaceSalle InterfaceSalle = new InterfaceSalle();
+        InterfaceSalle InterSalle = new InterfaceSalle(c, s.get_ID_film(id), s.get_places_totales(id), s.get_places_libres(id), s.get_date(id));
+        InterSalle.setVisible(true);
+        InterSalle.pack();
+        InterSalle.setLocationRelativeTo(null);
+        InterSalle.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-/*javax.swing.JLabel LabelAffiche = new javax.swing.JLabel();
-        InfoFilm InterfaceInfoFilm = new InfoFilm(c, f.getNom(id), f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id, f.getAnnee(id));
-        InterfaceInfoFilm.setVisible(true);
-        InterfaceInfoFilm.pack();
-        InterfaceInfoFilm.setLocationRelativeTo(null);
-        InterfaceInfoFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
-}
+    }
 
 }

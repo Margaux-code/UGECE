@@ -110,6 +110,7 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Component id="LabelGenre" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <Component id="ComboBoxSalle" alignment="0" min="-2" pref="176" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -145,6 +146,8 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="LabelAnnee" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                          <Component id="ComboBoxSalle" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="129" max="32767" attributes="0"/>
@@ -240,6 +243,16 @@
             <Property name="text" type="java.lang.String" value="Sortie le:"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="ComboBoxSalle">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="0"/>
+            </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
         </Component>
       </SubComponents>
     </Container>
