@@ -27,10 +27,10 @@ public class Gestionnaire_reservation {
         //Propriétés
         Properties p = new Properties();
         p.put("mail.smtp.host", "smtp.gmail.com");
-        p.put("mail.smtp.socketFactory.port", "25");
+        p.put("mail.smtp.socketFactory.port", "465");
         p.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
         p.put("mail.smtp.auth", "true");
-        p.put("mail.smtp.port", "25");
+        p.put("mail.smtp.port", "465");
         //Session
         Session s = Session.getDefaultInstance(p,
                 new javax.mail.Authenticator() {
