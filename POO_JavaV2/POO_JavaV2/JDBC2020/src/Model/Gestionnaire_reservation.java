@@ -76,7 +76,7 @@ public class Gestionnaire_reservation {
 
     }
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+  /*  public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         Connexion c = new Connexion("bdd ugece", "root", "");
         Gestionnaire_reservation.send(
@@ -89,7 +89,7 @@ public class Gestionnaire_reservation {
       
       
 
-    }
+    }*/
 
    
 }
