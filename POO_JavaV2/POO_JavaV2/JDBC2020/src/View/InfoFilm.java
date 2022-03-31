@@ -70,6 +70,7 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelActeur = new javax.swing.JLabel();
         LabelAnnee = new javax.swing.JLabel();
         LabelTitre = new javax.swing.JLabel();
+        RetourInfoFilm = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,7 +85,7 @@ public class InfoFilm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(355, 355, 355)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(522, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,34 +116,40 @@ public class InfoFilm extends javax.swing.JFrame {
 
         LabelTitre.setText("Titre");
 
+        RetourInfoFilm.setText("Retour");
+        RetourInfoFilm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetourInfoFilmActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(RetourInfoFilm)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(LabelGenre)
-                    .addComponent(LabelAnnee)
-                    .addComponent(LabelActeur)
-                    .addComponent(LabelIntrigue)
-                    .addComponent(LabelRealisateur)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelGenre)
+                            .addComponent(LabelAnnee)
+                            .addComponent(LabelActeur)
+                            .addComponent(LabelIntrigue)
+                            .addComponent(LabelRealisateur)))
                     .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(503, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
+                        .addGap(70, 70, 70)
                         .addComponent(LabelGenre)
                         .addGap(39, 39, 39)
                         .addComponent(LabelIntrigue)
@@ -151,8 +158,14 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addGap(54, 54, 54)
                         .addComponent(LabelActeur)
                         .addGap(72, 72, 72)
-                        .addComponent(LabelAnnee)))
-                .addContainerGap(200, Short.MAX_VALUE))
+                        .addComponent(LabelAnnee))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(3, 3, 3)
+                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addComponent(RetourInfoFilm))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -176,6 +189,12 @@ public class InfoFilm extends javax.swing.JFrame {
     private void LabelIntrigueMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelIntrigueMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_LabelIntrigueMouseClicked
+
+    private void RetourInfoFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourInfoFilmActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        m_controler.AfficheInterfaceFilm(m_controler);
+    }//GEN-LAST:event_RetourInfoFilmActionPerformed
    
 
     /**
@@ -221,6 +240,7 @@ public class InfoFilm extends javax.swing.JFrame {
     private javax.swing.JLabel LabelRealisateur;
     private javax.swing.JLabel LabelTitre;
     private javax.swing.JLabel LabelUrl;
+    private javax.swing.JButton RetourInfoFilm;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

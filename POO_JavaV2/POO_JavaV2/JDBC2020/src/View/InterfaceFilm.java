@@ -399,33 +399,39 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
     private void afficherFilm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm3ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
      m_controler.AffichageInfoFilm(m_controler,2);
      
     }//GEN-LAST:event_afficherFilm3ActionPerformed
 
     private void afficherFilm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm2ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
          m_controler.AffichageInfoFilm(m_controler,1);
     }//GEN-LAST:event_afficherFilm2ActionPerformed
 
     private void afficherFilm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm1ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
          m_controler.AffichageInfoFilm(m_controler,0);
         
     }//GEN-LAST:event_afficherFilm1ActionPerformed
 
     private void afficherFilm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm4ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
          m_controler.AffichageInfoFilm(m_controler,3);
     }//GEN-LAST:event_afficherFilm4ActionPerformed
 
     private void afficherFilm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm5ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
          m_controler.AffichageInfoFilm(m_controler,4);
     }//GEN-LAST:event_afficherFilm5ActionPerformed
 
     private void afficherFilm6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm6ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
          m_controler.AffichageInfoFilm(m_controler,5);
     }//GEN-LAST:event_afficherFilm6ActionPerformed
 
