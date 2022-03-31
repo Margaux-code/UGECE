@@ -71,6 +71,11 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelAnnee = new javax.swing.JLabel();
         LabelTitre = new javax.swing.JLabel();
         RetourInfoFilm = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,10 +103,12 @@ public class InfoFilm extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(108, 122, 137));
 
         LabelUrl.setText("Url");
+        LabelUrl.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LabelGenre.setText("Genre");
 
         LabelIntrigue.setText("Intrigue");
+        LabelIntrigue.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         LabelIntrigue.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LabelIntrigueMouseClicked(evt);
@@ -109,11 +116,15 @@ public class InfoFilm extends javax.swing.JFrame {
         });
 
         LabelRealisateur.setText("Realisateur");
+        LabelRealisateur.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         LabelActeur.setText("Acteur");
+        LabelActeur.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         LabelAnnee.setText("Date");
+        LabelAnnee.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        LabelTitre.setFont(new java.awt.Font("Segoe UI Historic", 2, 18)); // NOI18N
         LabelTitre.setText("Titre");
 
         RetourInfoFilm.setText("Retour");
@@ -122,6 +133,20 @@ public class InfoFilm extends javax.swing.JFrame {
                 RetourInfoFilmActionPerformed(evt);
             }
         });
+
+        jLabel2.setText("Le genre du Film:");
+
+        jLabel3.setText("L'intrigue:");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel4.setText("Par:");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel5.setText("Avec:");
+        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel6.setText("Sortie le:");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -132,38 +157,53 @@ public class InfoFilm extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelGenre)
-                            .addComponent(LabelAnnee)
-                            .addComponent(LabelActeur)
-                            .addComponent(LabelIntrigue)
-                            .addComponent(LabelRealisateur)))
-                    .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelActeur)
+                    .addComponent(LabelRealisateur)
+                    .addComponent(LabelIntrigue, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelAnnee)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(LabelGenre)
+                    .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(LabelGenre)
-                        .addGap(39, 39, 39)
-                        .addComponent(LabelIntrigue)
-                        .addGap(71, 71, 71)
-                        .addComponent(LabelRealisateur)
-                        .addGap(54, 54, 54)
-                        .addComponent(LabelActeur)
-                        .addGap(72, 72, 72)
-                        .addComponent(LabelAnnee))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
                         .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(3, 3, 3)
-                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelGenre)
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel3)
+                        .addGap(5, 5, 5)
+                        .addComponent(LabelIntrigue)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelRealisateur)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelActeur)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(LabelAnnee)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
                 .addComponent(RetourInfoFilm))
         );
@@ -242,6 +282,11 @@ public class InfoFilm extends javax.swing.JFrame {
     private javax.swing.JLabel LabelUrl;
     private javax.swing.JButton RetourInfoFilm;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables

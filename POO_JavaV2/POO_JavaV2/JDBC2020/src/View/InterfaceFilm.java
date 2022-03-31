@@ -186,6 +186,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
         jLabel1.setText("  Prenez vos reservation parmis les films à l'affiche dans notre cinéma");
         jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
+        LabelFilmID0.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         javax.swing.GroupLayout AfficheFilm1Layout = new javax.swing.GroupLayout(AfficheFilm1);
         AfficheFilm1.setLayout(AfficheFilm1Layout);
         AfficheFilm1Layout.setHorizontalGroup(
@@ -196,6 +198,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
             AfficheFilm1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelFilmID0, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
+
+        LabelFilmID1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout AfficheFilm4Layout = new javax.swing.GroupLayout(AfficheFilm4);
         AfficheFilm4.setLayout(AfficheFilm4Layout);
@@ -208,6 +212,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
             .addComponent(LabelFilmID1, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
 
+        LabelFilmID2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         javax.swing.GroupLayout AfficheFilm2Layout = new javax.swing.GroupLayout(AfficheFilm2);
         AfficheFilm2.setLayout(AfficheFilm2Layout);
         AfficheFilm2Layout.setHorizontalGroup(
@@ -218,6 +224,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
             AfficheFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelFilmID2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
+
+        LabelFilmID3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout AfficheFilm5Layout = new javax.swing.GroupLayout(AfficheFilm5);
         AfficheFilm5.setLayout(AfficheFilm5Layout);
@@ -230,6 +238,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
             .addComponent(LabelFilmID3, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
 
+        LabelFilmID5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         javax.swing.GroupLayout AfficheFilm6Layout = new javax.swing.GroupLayout(AfficheFilm6);
         AfficheFilm6.setLayout(AfficheFilm6Layout);
         AfficheFilm6Layout.setHorizontalGroup(
@@ -240,6 +250,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
             AfficheFilm6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(LabelFilmID5, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
         );
+
+        LabelFilmID4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         javax.swing.GroupLayout AfficheFilm3Layout = new javax.swing.GroupLayout(AfficheFilm3);
         AfficheFilm3.setLayout(AfficheFilm3Layout);
