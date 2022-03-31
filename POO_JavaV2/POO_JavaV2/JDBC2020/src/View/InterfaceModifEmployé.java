@@ -6,6 +6,9 @@
 package View;
 
 import Controller.MyController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -14,6 +17,7 @@ import Controller.MyController;
 public class InterfaceModifEmployé extends javax.swing.JFrame {
 
     MyController m_controler;
+    
 
     /**
      * Creates new form InterfaceModifEmployé
@@ -22,6 +26,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         m_controler = c;
+        
     }
 
     /**
@@ -41,18 +46,15 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         jPanel7 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        AfficheFilm7 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        AfficheFilm4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        AfficheFilm2 = new javax.swing.JPanel();
-        jButton4 = new javax.swing.JButton();
-        AfficheFilm5 = new javax.swing.JPanel();
-        jButton5 = new javax.swing.JButton();
-        AfficheFilm6 = new javax.swing.JPanel();
-        jButton6 = new javax.swing.JButton();
-        AfficheFilm3 = new javax.swing.JPanel();
-        jButton7 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        ChangerPrixEnfant = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        ChangerPrixRegulier = new javax.swing.JTextField();
+        ChangerPrixSenior = new javax.swing.JTextField();
+        SaisiePrixPleinTarif = new javax.swing.JTextField();
+        MettreAjourPrix = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,7 +85,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
 
         LesReservation.setBackground(new java.awt.Color(153, 153, 153));
         LesReservation.setText("Les reservation");
-        LesReservation.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        LesReservation.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         LesReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LesReservationActionPerformed(evt);
@@ -92,7 +94,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
 
         retourAcceuil.setBackground(new java.awt.Color(153, 153, 153));
         retourAcceuil.setText("Acceuil");
-        retourAcceuil.setBorder(new javax.swing.border.SoftBevelBorder(0));
+        retourAcceuil.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         retourAcceuil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 retourAcceuilActionPerformed(evt);
@@ -117,7 +119,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                 .addComponent(LesReservation)
                 .addGap(18, 18, 18)
                 .addComponent(retourAcceuil)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel7.setBackground(new java.awt.Color(108, 122, 137));
@@ -127,190 +129,114 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         jLabel2.setText("  Prenez vos reservation parmis les films à l'affiche dans notre cinéma");
         jLabel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
-        jButton2.setText("Mettre NomDuFilm1");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setBackground(new java.awt.Color(108, 122, 137));
+        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setText("Changer Prix Regulier");
+
+        ChangerPrixEnfant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                ChangerPrixEnfantActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AfficheFilm7Layout = new javax.swing.GroupLayout(AfficheFilm7);
-        AfficheFilm7.setLayout(AfficheFilm7Layout);
-        AfficheFilm7Layout.setHorizontalGroup(
-            AfficheFilm7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm7Layout.setVerticalGroup(
-            AfficheFilm7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm7Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addContainerGap())
-        );
+        jLabel4.setBackground(new java.awt.Color(108, 122, 137));
+        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setText("Changer Prix Enfant");
 
-        jButton3.setText("Mettre NomDuFilm4");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jLabel5.setBackground(new java.awt.Color(108, 122, 137));
+        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setText("Changer Prix Senior");
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel1.setText("Changer Prix Plein Tarif");
+
+        ChangerPrixRegulier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ChangerPrixRegulierActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AfficheFilm4Layout = new javax.swing.GroupLayout(AfficheFilm4);
-        AfficheFilm4.setLayout(AfficheFilm4Layout);
-        AfficheFilm4Layout.setHorizontalGroup(
-            AfficheFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfficheFilm4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 203, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm4Layout.setVerticalGroup(
-            AfficheFilm4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm4Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton3)
-                .addContainerGap())
-        );
-
-        jButton4.setText("Mettre NomDuFilm2");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ChangerPrixSenior.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ChangerPrixSeniorActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AfficheFilm2Layout = new javax.swing.GroupLayout(AfficheFilm2);
-        AfficheFilm2.setLayout(AfficheFilm2Layout);
-        AfficheFilm2Layout.setHorizontalGroup(
-            AfficheFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfficheFilm2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm2Layout.setVerticalGroup(
-            AfficheFilm2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm2Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addContainerGap())
-        );
-
-        jButton5.setText("Mettre NomDuFilm5");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        SaisiePrixPleinTarif.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                SaisiePrixPleinTarifActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout AfficheFilm5Layout = new javax.swing.GroupLayout(AfficheFilm5);
-        AfficheFilm5.setLayout(AfficheFilm5Layout);
-        AfficheFilm5Layout.setHorizontalGroup(
-            AfficheFilm5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfficheFilm5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm5Layout.setVerticalGroup(
-            AfficheFilm5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm5Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton5)
-                .addContainerGap())
-        );
-
-        jButton6.setText("Mettre NomDuFilm6");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        MettreAjourPrix.setText("Mettre à jour");
+        MettreAjourPrix.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                MettreAjourPrixActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout AfficheFilm6Layout = new javax.swing.GroupLayout(AfficheFilm6);
-        AfficheFilm6.setLayout(AfficheFilm6Layout);
-        AfficheFilm6Layout.setHorizontalGroup(
-            AfficheFilm6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfficheFilm6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm6Layout.setVerticalGroup(
-            AfficheFilm6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm6Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton6)
-                .addContainerGap())
-        );
-
-        jButton7.setText("Mettre NomDuFilm3");
-        jButton7.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AfficheFilm3Layout = new javax.swing.GroupLayout(AfficheFilm3);
-        AfficheFilm3.setLayout(AfficheFilm3Layout);
-        AfficheFilm3Layout.setHorizontalGroup(
-            AfficheFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AfficheFilm3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        AfficheFilm3Layout.setVerticalGroup(
-            AfficheFilm3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AfficheFilm3Layout.createSequentialGroup()
-                .addContainerGap(244, Short.MAX_VALUE)
-                .addComponent(jButton7)
-                .addContainerGap())
-        );
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
+                        .addGap(81, 81, 81)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AfficheFilm2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AfficheFilm3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AfficheFilm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(127, 127, 127)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AfficheFilm5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AfficheFilm6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(AfficheFilm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(128, Short.MAX_VALUE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(SaisiePrixPleinTarif, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(ChangerPrixSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(29, 29, 29)
+                                        .addComponent(ChangerPrixEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(MettreAjourPrix)))))
+                .addContainerGap(179, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(261, 261, 261)
+                    .addComponent(ChangerPrixRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(335, Short.MAX_VALUE)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AfficheFilm7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AfficheFilm4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(67, 67, 67)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AfficheFilm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AfficheFilm5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AfficheFilm3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(AfficheFilm6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(118, 118, 118))
+                .addGap(56, 56, 56)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ChangerPrixSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ChangerPrixEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SaisiePrixPleinTarif, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MettreAjourPrix))
+                .addContainerGap(891, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(128, 128, 128)
+                    .addComponent(ChangerPrixRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1067, Short.MAX_VALUE)))
         );
 
         jScrollPane3.setViewportView(jPanel7);
@@ -335,7 +261,9 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -352,33 +280,39 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         m_controler.AfficheAccueil(m_controler);
     }//GEN-LAST:event_retourAcceuilActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void ChangerPrixEnfantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangerPrixEnfantActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_ChangerPrixEnfantActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void ChangerPrixRegulierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangerPrixRegulierActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_ChangerPrixRegulierActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ChangerPrixSeniorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangerPrixSeniorActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_ChangerPrixSeniorActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void SaisiePrixPleinTarifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisiePrixPleinTarifActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_SaisiePrixPleinTarifActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void MettreAjourPrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MettreAjourPrixActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
-
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
+        
+        try {
+            m_controler.MettreAJourPrixFilm(SaisiePrixPleinTarif.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceModifEmployé.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_MettreAjourPrixActionPerformed
 
     /**
      * @param args the command line arguments
      */
+
+
+    
+
     public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -412,28 +346,20 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel AfficheFilm1;
-    private javax.swing.JPanel AfficheFilm2;
-    private javax.swing.JPanel AfficheFilm3;
-    private javax.swing.JPanel AfficheFilm4;
-    private javax.swing.JPanel AfficheFilm5;
-    private javax.swing.JPanel AfficheFilm6;
-    private javax.swing.JPanel AfficheFilm7;
+    private javax.swing.JTextField ChangerPrixEnfant;
+    private javax.swing.JTextField ChangerPrixRegulier;
+    private javax.swing.JTextField ChangerPrixSenior;
     private javax.swing.JButton LesReservation;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton MettreAjourPrix;
+    private javax.swing.JTextField SaisiePrixPleinTarif;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JButton retourAcceuil;
     private javax.swing.JLabel titrePageFIlm;

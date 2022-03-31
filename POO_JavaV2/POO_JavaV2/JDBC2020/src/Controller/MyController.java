@@ -31,6 +31,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
+import Model.tarifs;
 
 /**
  *
@@ -40,6 +41,7 @@ public class MyController {
 
     Client m_client;
     private films f;
+    private tarifs m_tarif;
 
     // toutes les methodes en static et les variables
     public MyController() throws SQLException, ClassNotFoundException {
@@ -47,6 +49,7 @@ public class MyController {
         Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
 
         f = new films(c);// Chargement des films
+        m_tarif = new tarifs(c);
         m_client = new Client();
     }
 
@@ -130,7 +133,7 @@ public class MyController {
         } catch (SQLException e) {
             System.out.println("inscription ratée");
         }
-        CookieClient(mail,control);
+        CookieClient(mail, control);
         AfficheInterfaceFilm(control);
 
     }
@@ -149,7 +152,7 @@ public class MyController {
             test = stmt.executeQuery();
             if (test.next()) {
                 JOptionPane.showMessageDialog(null, "Client connecté");
-                CookieClient(mail,control);
+                CookieClient(mail, control);
                 AfficheInterfaceFilm(control);
                 //m_client.afficheClient();
                 ///renvoyé dans le cinéma
@@ -286,8 +289,8 @@ public class MyController {
             Bouton.setForeground(Color.white);
             Bouton.setText("Pas Connecté");
         } else {
-           Bouton.setForeground(Color.white);
-           Bouton.setText(control.GetClient().getUser());
+            Bouton.setForeground(Color.white);
+            Bouton.setText(control.GetClient().getUser());
         }
     }
 
@@ -370,6 +373,19 @@ public class MyController {
             e.printStackTrace();
         }
 
+    }
+
+    public void MettreAJourPrixFilm(String PleinTarif, String PRegulier, String PSenior, String PEnfant) throws SQLException {
+           /* Integer PrixEnfant = Integer.valueOf(PEnfant);
+            Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
+            Integer PrixSenior = Integer.valueOf(PSenior);
+            Integer PrixRegulier = Integer.valueOf(PRegulier);
+        if ((0 <= PrixPleinTarif) && (PrixPleinTarif <= 20) && (0 <= PrixEnfant) && (PrixEnfant <= 20) && (0 <= PrixSenior) && (PrixSenior <= 20) && (0 <= PrixRegulier) && (PrixRegulier <= 20)) {
+            m_tarif.setPleinTarif(PrixPleinTarif);
+            m_tarif.setEnfant(PrixEnfant);
+            m_tarif.setSenior(PrixSenior);
+            m_tarif.setRegulier(PrixRegulier);
+        }*/
     }
 
     public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {
