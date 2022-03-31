@@ -1,37 +1,45 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
 Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 Source: https://www.youtube.com/watch?v=i5UG6ACtnEg&t=782s&ab_channel=1BestCsharpblog
 Source: MrSegado et campus
  */
 package Controller;
 
+// liste de tous les imports que nous utilisons dans le projet
 import Controller.Connexion;
+
+
+//import model
+import Model.Client;// appel de la classe client
+import Model.films;// appel de la classe films
+import Model.tarifs;// appel de la classe tarifs
+import Model.salle;// appel de la classe salle
+//import view
+import View.InterfaceClient;
+import View.InterfaceInscriptionClient;
+import View.Accueil;
+import View.InterfaceConnexion;
+import View.InterfaceEmployé;
+import View.InterfaceFilm;// vue de la page d'accueil du cinéma ( où l'on va sélectionner les films)
+import View.InfoFilm;// affichage des informations d'un film
+import View.InterfaceModifEmployé;
+import View.InterfaceSalle;//affichage du début de la réservation ( après la sélection d'un salle)
+
+
+//java/javax
 import java.sql.SQLException;
 import java.sql.*;
 import java.util.*;
 import javax.swing.JFrame;
-import View.InterfaceClient;
-import View.InterfaceInscriptionClient;
-import Model.Client;
-import Model.films;
 import javax.swing.JOptionPane;
-import View.Accueil;
-import View.InterfaceConnexion;
-import View.InterfaceEmployé;
-import View.InterfaceFilm;
-import View.InfoFilm;
-import View.InterfaceModifEmployé;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import Model.tarifs;
+import java.net.URL;// permet d'associé un string à un URL
+import javax.imageio.ImageIO;// associé l'url à un image
+import javax.swing.ImageIcon;// afficher l'image en type Icon
+
 
 /**
  *
@@ -433,5 +441,23 @@ public class MyController {
         }
 
     }
+
+// permettra de générer l'action d'un comboBox: içi la comboBox présent dans InfoFilm qui permet de sélectionner une classe
+public void ComboBoxInfoFilm()
+{
+
+}
+
+public void InterfaceSalleView(MyController c, int id)
+{
+//InterfaceSalle InterfaceSalle = new InterfaceSalle();
+
+/*javax.swing.JLabel LabelAffiche = new javax.swing.JLabel();
+        InfoFilm InterfaceInfoFilm = new InfoFilm(c, f.getNom(id), f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id, f.getAnnee(id));
+        InterfaceInfoFilm.setVisible(true);
+        InterfaceInfoFilm.pack();
+        InterfaceInfoFilm.setLocationRelativeTo(null);
+        InterfaceInfoFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);*/
+}
 
 }

@@ -4,17 +4,34 @@
  */
 package View;
 
+import Controller.MyController;
+
 /**
  *
  * @author Alix Parisot
  */
-public class interfaceSalle extends javax.swing.JFrame {
+public class InterfaceSalle extends javax.swing.JFrame {
 
     /**
      * Creates new form interfacesalle
      */
-    public interfaceSalle() {
+
+// attribut de la classe 
+private MyController m_controler;
+private int ID_salle;
+private int m_places_totales;
+private int m_places_libre;
+private String m_date;
+//private String m_NomFilmSelection;
+// il faut réussir à montrer que c est bien le bon film 
+
+    public InterfaceSalle(MyController controller,int idsalle, int placestotales,int placeslibre, String date) {
         initComponents();
+this.ID_salle=idsalle;
+this.m_controler=controller;
+this.m_places_totales=placestotales;
+this.m_places_libre=placeslibre;
+this.m_date=date;
     }
 
     /**
@@ -135,21 +152,23 @@ public class interfaceSalle extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(interfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(interfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(interfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(interfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InterfaceSalle.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new interfaceSalle().setVisible(true);
+               // new InterfaceSalle().setVisible(true);
             }
         });
     }

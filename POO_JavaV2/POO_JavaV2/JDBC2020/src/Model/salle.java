@@ -118,6 +118,7 @@ public class salle {
         int Nouveau = this.m_places_libre.get(ID_salle) - 1;
         this.m_places_libre.set(ID_salle, Nouveau);
     }
+
     //Getter 
     public Integer get_places_totales(Integer ID_salle) {
         return this.m_places_totales.get(ID_salle);
@@ -135,4 +136,8 @@ public class salle {
         return this.m_ID_film.get(Id_salle);
     }
 
+// on fait un getter de salle qui me permet d'appeler la classe sallesolo, on retourne le constructeur de cette classe avec les attributs passées en paramètre
+    public SalleSolo getsalle(int id) {
+        return new SalleSolo((int) this.m_ID_salle.get(id), this.m_places_totales.get(id), this.m_places_libre.get(id), this.m_date.get(id), this.m_ID_film.get(id));
+    }
 }
