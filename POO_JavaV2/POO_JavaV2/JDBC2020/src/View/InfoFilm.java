@@ -49,6 +49,7 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelActeur.setText(Acteur);
         //LabelAnnee.setText(Annee); c'est pas un string
         m_controler.ChoisirFilm(id, m_controler, LabelUrl);
+        
     }
 
     /**
