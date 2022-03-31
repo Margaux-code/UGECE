@@ -6,31 +6,29 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 //suivi du turtoriel 
 //interface faite en utilisant les outils "Design" de Netbeans
  */
-
 package View;
-
-
 
 import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
-
 /**
  *
  * @author matth
  */
 public class InterfaceConnexion extends javax.swing.JFrame {
-     MyController m_controler;
+
+    MyController m_controler;
+
     /**
      * Creates new form InterfaceConnexion
      */
     public InterfaceConnexion(MyController c) {
         initComponents();
-        m_controler=c;
-        
+        this.setLocationRelativeTo(null);
+        m_controler = c;
+
     }
 
     /**
@@ -193,26 +191,25 @@ public class InterfaceConnexion extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
         m_controler.AfficheInterfaceClient(m_controler);
-        
+
     }//GEN-LAST:event_RetourClientMouseClicked
 
     private void ButtonConnexionClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonConnexionClientMouseClicked
         // TODO add your handling code here:
-        
+
         try {
-            m_controler.checkLoginMdp(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()),m_controler);
+            m_controler.checkLoginMdp(SaisieMail.getText(), String.valueOf(SaisieMdp.getPassword()), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-             m_controler.CookieClient(SaisieMail.getText(), m_controler);
+            m_controler.CookieClient(SaisieMail.getText(), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
-        
-    }//GEN-LAST:event_ButtonConnexionClientMouseClicked
 
+    }//GEN-LAST:event_ButtonConnexionClientMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

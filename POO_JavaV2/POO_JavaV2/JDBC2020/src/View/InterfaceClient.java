@@ -10,19 +10,21 @@ package View;
 
 import Controller.MyController;
 
-
 /**
  *
  * @author matth
  */
 public class InterfaceClient extends javax.swing.JFrame {
-     MyController m_controler;
+
+    MyController m_controler;
+
     /**
      * Creates new form InterfaceClient
      */
     public InterfaceClient(MyController c) {
         initComponents();
-        m_controler=c;
+        this.setLocationRelativeTo(null);
+        m_controler = c;
     }
 
     /**
@@ -141,14 +143,14 @@ public class InterfaceClient extends javax.swing.JFrame {
 
     private void ButtonIncsriptionClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonIncsriptionClientActionPerformed
         // TODO add your handling code here:
-        
+
         this.dispose();
         m_controler.AfficheInterfaceInscription(m_controler);
     }//GEN-LAST:event_ButtonIncsriptionClientActionPerformed
 
     private void BoutonConnexionClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonConnexionClientActionPerformed
         // TODO add your handling code here:
-       
+
         this.dispose();
         m_controler.AfficheInterfaceConnexion(m_controler);
     }//GEN-LAST:event_BoutonConnexionClientActionPerformed
@@ -162,7 +164,6 @@ public class InterfaceClient extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    
     public void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

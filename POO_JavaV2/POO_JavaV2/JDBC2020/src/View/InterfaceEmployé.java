@@ -7,24 +7,27 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 //interface faite en utilisant les outils "Design" de Netbeans
  */
 package View;
+
 import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 
 /**
  *
  * @author matth
  */
 public class InterfaceEmployé extends javax.swing.JFrame {
-   MyController m_controler;
+
+    MyController m_controler;
+
     /**
      * Creates new form InterfaceEmployé
      */
     public InterfaceEmployé(MyController c) {
         initComponents();
-        m_controler=c;
+        this.setLocationRelativeTo(null);
+        m_controler = c;
     }
 
     /**
@@ -187,12 +190,12 @@ public class InterfaceEmployé extends javax.swing.JFrame {
     private void ButtonConnexionClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonConnexionClientMouseClicked
         // TODO add your handling code here:
         try {
-            m_controler.ConnexionEmploye(SaisieMail.getText(),String.valueOf(SaisieMdp.getPassword()),m_controler);
+            m_controler.ConnexionEmploye(SaisieMail.getText(), String.valueOf(SaisieMdp.getPassword()), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
-       
+
     }//GEN-LAST:event_ButtonConnexionClientMouseClicked
 
     /**

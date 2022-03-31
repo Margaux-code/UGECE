@@ -20,16 +20,16 @@ import Model.films;
 public class InterfaceFilm extends javax.swing.JFrame {
 
     MyController m_controler;
-    
 
     /**
      * Creates new form InterfaceFilm
      */
     public InterfaceFilm(MyController c) {
         initComponents();
+        this.setLocationRelativeTo(null);
         m_controler = c;
-        
-        m_controler.AffichageFilm(LabelFilmID0,LabelFilmID1,LabelFilmID2,LabelFilmID3,LabelFilmID4,LabelFilmID5);
+
+        m_controler.AffichageFilm(LabelFilmID0, LabelFilmID1, LabelFilmID2, LabelFilmID3, LabelFilmID4, LabelFilmID5);
         m_controler.AfficheClientConnecte(AffichageUserClient, m_controler);
     }
 
@@ -174,7 +174,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
                 .addComponent(ListeAvantage)
                 .addGap(86, 86, 86)
                 .addComponent(retourAcceuil)
-                .addContainerGap(985, Short.MAX_VALUE))
+                .addContainerGap(300, Short.MAX_VALUE))
         );
 
         jPanel6.setBackground(new java.awt.Color(108, 122, 137));
@@ -328,7 +328,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(177, 177, 177)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         jPanel6Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {AfficheFilm1, AfficheFilm2, AfficheFilm3, AfficheFilm4, AfficheFilm5, AfficheFilm6});
@@ -377,7 +377,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 899, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,34 +407,34 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
     private void afficherFilm3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm3ActionPerformed
         // TODO add your handling code here:
-     m_controler.AffichageInfoFilm(m_controler,2);
-     
+        m_controler.AffichageInfoFilm(m_controler, 2);
+
     }//GEN-LAST:event_afficherFilm3ActionPerformed
 
     private void afficherFilm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm2ActionPerformed
         // TODO add your handling code here:
-         m_controler.AffichageInfoFilm(m_controler,1);
+        m_controler.AffichageInfoFilm(m_controler, 1);
     }//GEN-LAST:event_afficherFilm2ActionPerformed
 
     private void afficherFilm1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm1ActionPerformed
         // TODO add your handling code here:
-         m_controler.AffichageInfoFilm(m_controler,0);
-        
+        m_controler.AffichageInfoFilm(m_controler, 0);
+
     }//GEN-LAST:event_afficherFilm1ActionPerformed
 
     private void afficherFilm4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm4ActionPerformed
         // TODO add your handling code here:
-         m_controler.AffichageInfoFilm(m_controler,3);
+        m_controler.AffichageInfoFilm(m_controler, 3);
     }//GEN-LAST:event_afficherFilm4ActionPerformed
 
     private void afficherFilm5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm5ActionPerformed
         // TODO add your handling code here:
-         m_controler.AffichageInfoFilm(m_controler,4);
+        m_controler.AffichageInfoFilm(m_controler, 4);
     }//GEN-LAST:event_afficherFilm5ActionPerformed
 
     private void afficherFilm6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afficherFilm6ActionPerformed
         // TODO add your handling code here:
-         m_controler.AffichageInfoFilm(m_controler,5);
+        m_controler.AffichageInfoFilm(m_controler, 5);
     }//GEN-LAST:event_afficherFilm6ActionPerformed
 
     /**
@@ -473,9 +473,6 @@ public class InterfaceFilm extends javax.swing.JFrame {
         });
     }
 
-    
-
-   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AffichageUserClient;

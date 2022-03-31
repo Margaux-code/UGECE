@@ -12,31 +12,34 @@ import Controller.MyController;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 /**
  *
  * @author matth
  */
 public class InterfaceInscriptionClient extends javax.swing.JFrame {
-   MyController m_controler;
+
+    MyController m_controler;
     /**
      * Creates new form InterfaceInscriptionClient
      */
-    
+
     private String recupAbonnement;
     private String recupMdp;
     private String recupMail;
     private String recupUser;
     private String recupFact;
     private Boolean Connecte;
-    
+
     public InterfaceInscriptionClient(MyController c) {
         initComponents();
-        recupAbonnement=null;
-        recupMdp=null;
-        recupMail=null;
-        recupFact=null;
-        Boolean Connecte=false;
-        m_controler=c;
+        this.setLocationRelativeTo(null);
+        recupAbonnement = null;
+        recupMdp = null;
+        recupMail = null;
+        recupFact = null;
+        Boolean Connecte = false;
+        m_controler = c;
     }
 
     /**
@@ -253,44 +256,44 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
 
     private void SaisieMdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisieMdpActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_SaisieMdpActionPerformed
 
     private void EnregistrerClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnregistrerClientActionPerformed
-        recupMdp=String.valueOf(SaisieMdp.getPassword());
-        recupMail=SaisieMail.getText();
-        recupUser=SaisieUser.getText();
-        
+        recupMdp = String.valueOf(SaisieMdp.getPassword());
+        recupMail = SaisieMail.getText();
+        recupUser = SaisieUser.getText();
+
         try {
-            m_controler.inscription(recupUser,recupMail,recupAbonnement,"non",recupMdp,m_controler);
+            m_controler.inscription(recupUser, recupMail, recupAbonnement, "non", recupMdp, m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
-         try {
-             m_controler.CookieClient(SaisieMail.getText(), m_controler);
+        try {
+            m_controler.CookieClient(SaisieMail.getText(), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
         this.dispose();
-        
+
     }//GEN-LAST:event_EnregistrerClientActionPerformed
 
     private void RetourInterfaceClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RetourInterfaceClientMouseClicked
         // TODO add your handling code here:
-        
+
         this.dispose();
         m_controler.AfficheInterfaceClient(m_controler);
     }//GEN-LAST:event_RetourInterfaceClientMouseClicked
 
     private void SaisieUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisieUserActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_SaisieUserActionPerformed
 
     private void SaisieMailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisieMailActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_SaisieMailActionPerformed
 
     private void AbonnementSeniorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AbonnementSeniorActionPerformed
@@ -299,38 +302,38 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
 
     private void AbonnementEnfantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementEnfantMouseClicked
         // TODO add your handling code here:
-        this.recupAbonnement="Enfant";
+        this.recupAbonnement = "Enfant";
     }//GEN-LAST:event_AbonnementEnfantMouseClicked
 
     private void AbonnementSeniorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementSeniorMouseClicked
         // TODO add your handling code here:
-        this.recupAbonnement="Senior";
+        this.recupAbonnement = "Senior";
     }//GEN-LAST:event_AbonnementSeniorMouseClicked
 
     private void AbonnementRegulierMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AbonnementRegulierMouseClicked
         // TODO add your handling code here:
-        this.recupAbonnement="Regulier";
+        this.recupAbonnement = "Regulier";
     }//GEN-LAST:event_AbonnementRegulierMouseClicked
-    public Boolean getConnecte()
-    {
+    public Boolean getConnecte() {
         return Connecte;
     }
-    public String getUser()
-    {
-     return this.recupUser;
+
+    public String getUser() {
+        return this.recupUser;
     }
-     public String getMdp()
-    {
-     return this.recupMdp;
+
+    public String getMdp() {
+        return this.recupMdp;
     }
-     public String getMembre()
-    {
-     return this.recupAbonnement;
+
+    public String getMembre() {
+        return this.recupAbonnement;
     }
-     public String getFacture()
-    {
-     return this.recupFact;
+
+    public String getFacture() {
+        return this.recupFact;
     }
+
     /**
      * @param args the command line arguments
      */

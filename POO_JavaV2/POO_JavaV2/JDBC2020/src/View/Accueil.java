@@ -7,6 +7,7 @@ Source:  https://www.youtube.com/watch?v=XAowXcmQ-kA&t=1074s
 //interface faite en utilisant les outils "Design" de Netbeans
  */
 package View;
+
 import Controller.MyController;
 
 /**
@@ -14,13 +15,16 @@ import Controller.MyController;
  * @author mahtt
  */
 public class Accueil extends javax.swing.JFrame {
-     MyController m_controler;
+
+    MyController m_controler;
+
     /**
      * Creates new form Accueille
      */
     public Accueil(MyController c) {
         initComponents();
-        m_controler=c;
+        this.setLocationRelativeTo(null);
+        m_controler = c;
     }
 
     /**
@@ -158,13 +162,13 @@ public class Accueil extends javax.swing.JFrame {
 
     private void ButtonInterfaceClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonInterfaceClientActionPerformed
         // TODO add your handling code here:
-        this.dispose();     
+        this.dispose();
         m_controler.AfficheInterfaceClient(m_controler);
     }//GEN-LAST:event_ButtonInterfaceClientActionPerformed
 
     private void BoutonInterfaceEmployeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoutonInterfaceEmployeActionPerformed
         // TODO add your handling code here:
-        
+
         this.dispose();
         m_controler.AfficheInterfaceEmploye(m_controler);
     }//GEN-LAST:event_BoutonInterfaceEmployeActionPerformed

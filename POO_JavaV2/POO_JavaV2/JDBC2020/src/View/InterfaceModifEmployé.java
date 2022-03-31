@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package View;
+
 import Controller.MyController;
 
 /**
@@ -11,13 +12,16 @@ import Controller.MyController;
  * @author vdrcy
  */
 public class InterfaceModifEmployé extends javax.swing.JFrame {
+
     MyController m_controler;
+
     /**
      * Creates new form InterfaceModifEmployé
      */
     public InterfaceModifEmployé(MyController c) {
         initComponents();
-        m_controler=c;
+        this.setLocationRelativeTo(null);
+        m_controler = c;
     }
 
     /**
