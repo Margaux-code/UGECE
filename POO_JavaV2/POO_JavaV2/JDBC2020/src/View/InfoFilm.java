@@ -46,7 +46,7 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelIntrigue.setText(Intrigue);
         LabelRealisateur.setText(Realisateur);
         LabelActeur.setText(Acteur);
-        //LabelAnnee.setText(Annee); c'est pas un string
+        //LabelAnnee.setint(Annee); c'est pas un string
         m_controler.ChoisirFilm(id, m_controler, LabelUrl);
         
     }
@@ -81,6 +81,7 @@ public class InfoFilm extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(3, 138, 255));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Les details de votre film");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -90,14 +91,14 @@ public class InfoFilm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(355, 355, 355)
                 .addComponent(jLabel1)
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(26, 26, 26)
-                .addComponent(jLabel1)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(108, 122, 137));
@@ -204,7 +205,7 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(LabelAnnee)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(RetourInfoFilm))
         );
 
