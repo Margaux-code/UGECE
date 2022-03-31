@@ -376,7 +376,7 @@ public class MyController {
     }
 
     public void MettreAJourPrixFilm(String PleinTarif, String PRegulier, String PSenior, String PEnfant) throws SQLException {
-           /* Integer PrixEnfant = Integer.valueOf(PEnfant);
+           Integer PrixEnfant = Integer.valueOf(PEnfant);
             Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
             Integer PrixSenior = Integer.valueOf(PSenior);
             Integer PrixRegulier = Integer.valueOf(PRegulier);
@@ -385,7 +385,8 @@ public class MyController {
             m_tarif.setEnfant(PrixEnfant);
             m_tarif.setSenior(PrixSenior);
             m_tarif.setRegulier(PrixRegulier);
-        }*/
+        
+    }
     }
 
     public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {

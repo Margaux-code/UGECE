@@ -53,7 +53,7 @@ public class tarifs {
 
             //étape 6: fermez l'objet de connexion
         } catch (SQLException e) {
-            System.out.println(e);
+            //System.out.println(e);
 
         }
 

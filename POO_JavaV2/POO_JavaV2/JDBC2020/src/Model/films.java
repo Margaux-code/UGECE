@@ -84,7 +84,7 @@ public class films {
             }
 
             //étape 6: fermez l'objet de connexion
-            con.close();
+            
         } catch (SQLException e) {
             System.out.println(e);
 
