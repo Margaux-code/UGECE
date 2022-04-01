@@ -92,10 +92,10 @@
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="LabelUrl" alignment="0" min="-2" pref="303" max="-2" attributes="0"/>
+                      <Component id="LabelUrl" min="-2" pref="303" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="LabelTitre" min="-2" pref="197" max="-2" attributes="0"/>
+                          <Component id="LabelTitre" min="-2" pref="233" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="10" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="ComboBoxSalle" min="-2" pref="176" max="-2" attributes="0"/>
                       <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
@@ -248,7 +248,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Sortie le:"/>
+            <Property name="text" type="java.lang.String" value="Sortie en:"/>
             <Property name="verticalAlignment" type="int" value="1"/>
           </Properties>
         </Component>

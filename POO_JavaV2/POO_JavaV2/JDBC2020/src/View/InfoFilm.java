@@ -149,7 +149,7 @@ public class InfoFilm extends javax.swing.JFrame {
         jLabel5.setText("Avec:");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel6.setText("Sortie le:");
+        jLabel6.setText("Sortie en:");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel7.setText("Choisir la salle pour faire une réservation:");
@@ -166,7 +166,7 @@ public class InfoFilm extends javax.swing.JFrame {
                     .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(32, 32, 32)
-                        .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(LabelGenre)
@@ -179,7 +179,7 @@ public class InfoFilm extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
