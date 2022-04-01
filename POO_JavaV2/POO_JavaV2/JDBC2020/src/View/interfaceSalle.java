@@ -21,20 +21,24 @@ public class InterfaceSalle extends javax.swing.JFrame {
     private int m_places_totales;
     private int m_places_libre;
     private String m_date;
+    private String m_nomfilmselection;
 //private String m_NomFilmSelection;
 // il faut réussir à montrer que c est bien le bon film 
 
-    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date) {
+    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date, String nomdufilmselection) {
         initComponents();
         this.ID_salle = idsalle;
         this.m_controler = controller;
         this.m_places_totales = placestotales;
         this.m_places_libre = placeslibre;
         this.m_date = date;
+        this.m_nomfilmselection = nomdufilmselection;
+        System.out.println(idsalle);
         LabelIDsalle.setText(String.valueOf(idsalle));//affichage de l'id du film
         Labelnbplacestotales.setText(String.valueOf(placestotales));// affichage du nombre de places totales
         Labelnbplacelibre.setText(String.valueOf(placeslibre));// affichage nombre de places libres ( restante)
         Labeldatefilm.setText(date);// affichage horaire du film 
+        LabelTitrefilm.setText(nomdufilmselection);
 
     }
 
@@ -54,6 +58,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Labelnbplacestotales = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,7 +70,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
 
         LabelTitrefilm.setText("Titre du film");
 
-        jLabel5.setText("La séance est à :");
+        jLabel5.setText("La séance est le:");
 
         Labeldatefilm.setText("Heure du film");
 
@@ -78,6 +83,8 @@ public class InterfaceSalle extends javax.swing.JFrame {
         jLabel2.setText("Nombre de places totales : ");
 
         Labelnbplacestotales.setText("Nombre de places totales");
+
+        jLabel4.setText("avril 2022");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,7 +105,9 @@ public class InterfaceSalle extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(Labeldatefilm)))
                         .addGap(18, 18, 18)
-                        .addComponent(LabelTitrefilm))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelTitrefilm)
+                            .addComponent(jLabel4)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel2)
@@ -131,7 +140,8 @@ public class InterfaceSalle extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(Labeldatefilm))
+                    .addComponent(Labeldatefilm)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -179,7 +189,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceSalle(m_controler,ID_salle,m_places_totales,m_places_libre,m_date).setVisible(true);
+                new InterfaceSalle(m_controler, ID_salle, m_places_totales, m_places_libre, m_date, m_nomfilmselection).setVisible(true);
             }
         });
     }
@@ -194,6 +204,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;

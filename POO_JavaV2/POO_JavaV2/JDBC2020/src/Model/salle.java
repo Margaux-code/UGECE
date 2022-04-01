@@ -140,4 +140,13 @@ public class salle {
     public SalleSolo getsalle(int id) {
         return new SalleSolo((int) this.m_ID_salle.get(id), this.m_places_totales.get(id), this.m_places_libre.get(id), this.m_date.get(id), this.m_ID_film.get(id));
     }
+
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+
+        Connexion c = new Connexion("bdd ugece", "root", "");
+        salle s = new salle(c);
+        s.ajouter_salle(50, "7", 1);
+
+
+    }
 }

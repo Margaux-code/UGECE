@@ -10,6 +10,7 @@ import Controller.Connexion;
 
 //import model
 import Model.Client;// appel de la classe client
+import Model.SalleSolo;
 import Model.films;// appel de la classe films
 import Model.tarifs;// appel de la classe tarifs
 import Model.salle;// appel de la classe salle
@@ -31,6 +32,8 @@ import java.util.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -47,7 +50,7 @@ public class MyController {
     Client m_client;
     private films f;
     private tarifs m_tarif;
-    private salle s;
+    private salle m_s;
 
     // toutes les methodes en static et les variables
     public MyController() throws SQLException, ClassNotFoundException {
@@ -57,6 +60,8 @@ public class MyController {
         f = new films(c);// Chargement des films
         m_tarif = new tarifs(c);
         m_client = new Client();
+        m_s = new salle(c);
+
     }
 
     public static void main(String[] s) throws SQLException, ClassNotFoundException {
@@ -441,28 +446,33 @@ public class MyController {
     }
 
 // permettra de générer l'action d'un comboBox: içi la comboBox présent dans InfoFilm qui permet de sélectionner une classe
-    public void ComboBoxInfoFilm(javax.swing.JComboBox combobox) {
-/*for (int i = 0; i < film.getNoms().size(); i++) {
+    public void ComboBoxInfoFilm(MyController c, javax.swing.JComboBox combobox, int id_film) {
 
-            ComboBox.addItem(film.getfilm(i));
-           // film.getfilm(i);
+        System.out.println("coucou1");
+
+        ArrayList<Integer> resafilm = m_s.getResa_film(id_film);;
+        for (int i = 0; i < resafilm.size(); i++) {
+            System.out.println("Coucou2");
+            combobox.addItem(m_s.getsalle(resafilm.get(i)));
+            System.out.println("coucou3");
 
         }
-        ComboBox.setBounds(50, 50, 90, 20);
-        ComboBox.addActionListener(new ActionListener() {
+        combobox.setBounds(50, 50, 90, 20);
+        combobox.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
                 // setTitre();
 
-                controlleur.getBigcontroller().infofilmcontroller(((film) ComboBox.getSelectedItem()).getID());
+                InterfaceSalleView(c, ((SalleSolo) combobox.getSelectedItem()).getID());
             }
-        });*/
+        });
     }
 
-    public void InterfaceSalleView(MyController c, int id) {
+// méthode qui va nous permettre d'appeler la classe view interfaceSalle
+    public void InterfaceSalleView(MyController c, int idsalle) {
 //InterfaceSalle InterfaceSalle = new InterfaceSalle();
-        InterfaceSalle InterSalle = new InterfaceSalle(c, s.get_ID_film(id), s.get_places_totales(id), s.get_places_libres(id), s.get_date(id));
+        InterfaceSalle InterSalle = new InterfaceSalle(c,idsalle, m_s.get_places_totales(idsalle), m_s.get_places_libres(idsalle), m_s.get_date(idsalle),f.getNom(m_s.get_ID_film(idsalle)));
         InterSalle.setVisible(true);
         InterSalle.pack();
         InterSalle.setLocationRelativeTo(null);

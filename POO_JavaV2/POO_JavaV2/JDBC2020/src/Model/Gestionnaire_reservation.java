@@ -23,7 +23,7 @@ public class Gestionnaire_reservation {
     private tarifs m_prix;
 
     //Code pour envoyer un email venant de https://waytolearnx.com/2020/03/envoyer-un-mail-avec-java-en-utilisant-gmail.html
-    public static void send(String from, String pwd, String to, String sub, String msg) {
+   /* public static void send(String from, String pwd, String to, String sub, String msg) {
         //Propriétés
         Properties p = new Properties();
         p.put("mail.smtp.host", "smtp.gmail.com");
@@ -50,7 +50,7 @@ public class Gestionnaire_reservation {
         } catch (MessagingException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
     public tarifs get_tarifs() {
         return m_prix;

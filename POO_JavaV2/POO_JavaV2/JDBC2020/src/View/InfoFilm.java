@@ -31,7 +31,7 @@ public class InfoFilm extends javax.swing.JFrame {
     /**
      * Creates new form InfoFilm
      */
-    public InfoFilm(MyController c, String Nom, String Genre, String Intrigue, String Realisateur, String Acteur, int id, int Annee) {
+    public InfoFilm(MyController c, String Nom, String Genre, String Intrigue, String Realisateur, String Acteur, int idfilm, int Annee) {
         initComponents();
         m_controler = c;
         m_Nom = Nom;
@@ -39,7 +39,7 @@ public class InfoFilm extends javax.swing.JFrame {
         m_Intrigue = Intrigue;
         m_Realisateur = Realisateur;
         m_Acteur = Acteur;
-        m_id = id;
+        m_id = idfilm;
         m_Annee = Annee;
         LabelTitre.setText(Nom);
         LabelGenre.setText(Genre);
@@ -47,8 +47,8 @@ public class InfoFilm extends javax.swing.JFrame {
         LabelRealisateur.setText(Realisateur);
         LabelActeur.setText(Acteur);
         LabelAnnee.setText(String.valueOf(Annee)); //comment afficher correctement un int
-        m_controler.ChoisirFilm(id, m_controler, LabelUrl);
-        m_controler.ComboBoxInfoFilm(ComboBoxSalle);// on passe en paramètre ComboBoxSalle
+        m_controler.ChoisirFilm(idfilm, m_controler, LabelUrl);
+        m_controler.ComboBoxInfoFilm(c,ComboBoxSalle,idfilm);// on passe en paramètre ComboBoxSalle
         
     }
 
@@ -78,6 +78,7 @@ public class InfoFilm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         ComboBoxSalle = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -151,6 +152,8 @@ public class InfoFilm extends javax.swing.JFrame {
         jLabel6.setText("Sortie le:");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        jLabel7.setText("Choisir la salle pour faire une réservation:");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -166,6 +169,7 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addComponent(LabelTitre, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelGenre)
                     .addComponent(LabelActeur)
                     .addComponent(LabelRealisateur)
                     .addComponent(LabelIntrigue, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -174,10 +178,12 @@ public class InfoFilm extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
-                    .addComponent(LabelGenre)
-                    .addComponent(jLabel2)
-                    .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(202, 202, 202))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,10 +195,14 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addGap(3, 3, 3)
                         .addComponent(LabelUrl, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel7))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelGenre)
-                        .addGap(37, 37, 37)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(LabelGenre)
+                            .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(34, 34, 34)
                         .addComponent(jLabel3)
                         .addGap(5, 5, 5)
                         .addComponent(LabelIntrigue)
@@ -207,9 +217,7 @@ public class InfoFilm extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LabelAnnee)
-                        .addGap(68, 68, 68)
-                        .addComponent(ComboBoxSalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(LabelAnnee)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 129, Short.MAX_VALUE)
                 .addComponent(RetourInfoFilm))
         );
@@ -293,6 +301,7 @@ public class InfoFilm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
