@@ -5,6 +5,11 @@
  */
 package Model;
 
+import Controller.Connexion;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import static jdk.nashorn.internal.runtime.regexp.joni.Syntax.Java;
 
 /**
@@ -21,6 +26,8 @@ public class Client {
     private Boolean Connecte = false;
     private int Id_Client;
 
+  
+
     
 
     public void client(String us, String mail,String mdp, String Mem, String Fac,int  Id_client) {
@@ -32,6 +39,9 @@ public class Client {
         Connecte=true;
         Id_Client=Id_client;
     }
+
+    
+    
     public void afficheClient()
     {
         System.out.print("Nom:"+User+" mdp:"+Mdp+" Membre:"+Membre+" Facture:"+Facture+" mail:"+Mail+"id:"+Id_Client);

@@ -114,9 +114,11 @@ public class salle {
     }
 
     //Cette fonction enlève une place libre à une salle
-    public void prendre_une_place(int ID_salle) {
+    public void prendre_une_place(int ID_salle) throws SQLException {
         int Nouveau = this.m_places_libre.get(ID_salle) - 1;
         this.m_places_libre.set(ID_salle, Nouveau);
+        this.Sauvegarder(ID_salle);
+
     }
 
     //Getter 
@@ -145,8 +147,7 @@ public class salle {
 
         Connexion c = new Connexion("bdd ugece", "root", "");
         salle s = new salle(c);
-        s.ajouter_salle(0, "24", 3);
-
+        s.prendre_une_place(0);
 
     }
 }

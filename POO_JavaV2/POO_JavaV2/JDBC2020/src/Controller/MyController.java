@@ -12,6 +12,7 @@ import Controller.Connexion;
 import Model.Client;// appel de la classe client
 import Model.SalleSolo;
 import Model.films;// appel de la classe films
+import Model.reservations;
 import Model.tarifs;// appel de la classe tarifs
 import Model.salle;// appel de la classe salle
 //import view
@@ -47,34 +48,52 @@ import javax.swing.ImageIcon;// afficher l'image en type Icon
  * @author matth
  */
 public class MyController {
-    
+
     Client m_client;
     private films f;
     private tarifs m_tarif;
+    private reservations m_historique_resa;
+    private salle m_cine_salles;
     private salle m_s;
 
     // toutes les methodes en static et les variables
     public MyController() throws SQLException, ClassNotFoundException {
-        
+
         Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
 
         f = new films(c);// Chargement des films
         m_tarif = new tarifs(c);
         m_client = new Client();
         m_s = new salle(c);
-        
+        this.m_historique_resa = new reservations(c);
+        this.m_cine_salles = new salle(c);
+
     }
-    
+
+    // toutes les methodes en static et les variables
+   public MyController(Client client_tampon)throws SQLException, ClassNotFoundException {
+
+        Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
+        f = new films(c);// Chargement des films
+        m_tarif = new tarifs(c);
+        m_client = client_tampon;
+        m_s = new salle(c);
+        this.m_historique_resa = new reservations(c);
+        this.m_cine_salles = new salle(c);
+       
+
+    }
+
     public static void main(String[] s) throws SQLException, ClassNotFoundException {
-        
+
         MyController c = new MyController();
         c.AfficheAccueil(c);
     }
-    
+
     public Client GetClient() {
         return m_client;
     }
-    
+
     public void setClient(String User, String mail, String mdp, String membre, String Facture, int Id_client) {
         m_client.setUser(User);
         m_client.setMail(mail);
@@ -120,12 +139,12 @@ public class MyController {
         } catch (SQLException e) {
             System.out.println("inscription ratée");
         }
-        
+
     }
 
     //on inscrit un nouveau client dans la table client
     public void inscription(String us, String mail, String membre, String facture, String mdp, MyController control) throws SQLException, ClassNotFoundException {
-        
+
         Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         //Static String us=m_client.getUser();
@@ -142,12 +161,12 @@ public class MyController {
             stmt.setString(5, mdp);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            
+
             System.out.println("inscription ratée");
         }
         CookieClient(mail, control);
         AfficheInterfaceFilm(control);
-        
+
     }
 
     // On verifie dans la table client si le mdp et le mail correspondent pour la connexion
@@ -172,13 +191,13 @@ public class MyController {
             } else {
                 JOptionPane.showMessageDialog(null, "Client pas connecté");
                 AfficheInterfaceConnexion(control);
-                
+
             }
-            
+
         } catch (SQLException e) {
             System.out.println("inscription ratée");
         }
-        
+
     }
 
     //dans la table client permet d'ajouter une reservation si on connait le user
@@ -192,7 +211,7 @@ public class MyController {
             stmt.setInt(1, Id_Reservation);
             stmt.setString(2, user);
             stmt.executeUpdate();
-            
+
         } catch (SQLException e) {
             System.out.println("ajout resa raté");
         }
@@ -218,7 +237,7 @@ public class MyController {
                 JOptionPane.showMessageDialog(null, "Employé pas connecté");
                 AfficheInterfaceEmploye(control);
             }
-            
+
         } catch (SQLException e) {
             System.out.println("inscription ratée");
         }
@@ -231,7 +250,7 @@ public class MyController {
         Acc.pack();
         Acc.setLocationRelativeTo(null);
         Acc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
     }
     //affichagee de la page d'interface de connexion client
 
@@ -269,7 +288,7 @@ public class MyController {
         Employ.setLocationRelativeTo(null);
         Employ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
+
     public void AfficheInterfaceFilm(MyController c) {
         InterfaceFilm PageFilm = new InterfaceFilm(c);
         PageFilm.setVisible(true);
@@ -277,7 +296,7 @@ public class MyController {
         PageFilm.setLocationRelativeTo(null);
         PageFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
+
     public void AfficheInterfaceModifEmployé(MyController c) {
         InterfaceModifEmployé ModifEmployé = new InterfaceModifEmployé(c);
         ModifEmployé.setVisible(true);
@@ -285,7 +304,7 @@ public class MyController {
         ModifEmployé.setLocationRelativeTo(null);
         ModifEmployé.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
+
     public void AffichageInfoFilm(MyController c, int id) {
         javax.swing.JLabel LabelAffiche = new javax.swing.JLabel();
         InfoFilm InterfaceInfoFilm = new InfoFilm(c, f.getNom(id), f.getGenre(id), f.getIntrigue(id), f.getRealisateur(id), f.getActeur(id), id, f.getAnnee(id));
@@ -293,9 +312,9 @@ public class MyController {
         InterfaceInfoFilm.pack();
         InterfaceInfoFilm.setLocationRelativeTo(null);
         InterfaceInfoFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
     }
-    
+
     public void AfficheClientConnecte(javax.swing.JLabel Bouton, MyController control) {
         if (control.GetClient().getUser() == null) {
             Bouton.setForeground(Color.white);
@@ -305,21 +324,21 @@ public class MyController {
             Bouton.setText(control.GetClient().getUser());
         }
     }
-    
+
     public void AffichageFilm(javax.swing.JLabel LabelFilmID0, javax.swing.JLabel LabelFilmID1, javax.swing.JLabel LabelFilmID2, javax.swing.JLabel LabelFilmID3, javax.swing.JLabel LabelFilmID4, javax.swing.JLabel LabelFilmID5) {
         AfficherFilm0(LabelFilmID0);
-        
+
         AfficherFilm1(LabelFilmID1);
-        
+
         AfficherFilm2(LabelFilmID2);
-        
+
         AfficherFilm3(LabelFilmID3);
-        
+
         AfficherFilm4(LabelFilmID4);
-        
+
         AfficherFilm5(LabelFilmID5);
     }
-    
+
     public void ChoisirFilm(int id, MyController control, javax.swing.JLabel LabelFilm) {
         if (id == 0) {
             control.AfficherFilm0(LabelFilm);
@@ -340,9 +359,9 @@ public class MyController {
             control.AfficherFilm5(LabelFilm);
         }
     }
-    
+
     public void AfficherFilm0(javax.swing.JLabel LabelFilmID0) {
-        
+
         try {
             URL url = new URL(f.getURL(0));
             BufferedImage c = ImageIO.read(url);
@@ -353,13 +372,13 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public void AfficherFilm1(javax.swing.JLabel LabelFilmID1) {
-        
+
         try {
-            
+
             URL url = new URL(f.getURL(1));
             BufferedImage c = ImageIO.read(url);
             ImageIcon image = new ImageIcon(c);
@@ -369,11 +388,11 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public void AfficherFilm2(javax.swing.JLabel LabelFilmID2) {
-        
+
         try {
             URL url = new URL(f.getURL(2));
             BufferedImage c = ImageIO.read(url);
@@ -384,9 +403,9 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public void MettreAJourPrixFilm(String PleinTarif, String PRegulier, String PSenior, String PEnfant) throws SQLException {
         Integer PrixEnfant = Integer.valueOf(PEnfant);
         Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
@@ -397,12 +416,12 @@ public class MyController {
             m_tarif.setEnfant(PrixEnfant);
             m_tarif.setSenior(PrixSenior);
             m_tarif.setRegulier(PrixRegulier);
-            
+
         }
     }
-    
+
     public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {
-        
+
         try {
             URL url = new URL(f.getURL(3));
             BufferedImage c = ImageIO.read(url);
@@ -413,11 +432,11 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public void AfficherFilm4(javax.swing.JLabel LabelFilmID4) {
-        
+
         try {
             URL url = new URL(f.getURL(4));
             BufferedImage c = ImageIO.read(url);
@@ -428,11 +447,11 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
-    
+
     public void AfficherFilm5(javax.swing.JLabel LabelFilmID5) {
-        
+
         try {
             URL url = new URL(f.getURL(5));
             BufferedImage c = ImageIO.read(url);
@@ -443,21 +462,21 @@ public class MyController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        
+
     }
 
 // permettra de générer l'action d'un comboBox: içi la comboBox présent dans InfoFilm qui permet de sélectionner une classe
     public void ComboBoxInfoFilm(MyController c, javax.swing.JComboBox combobox, int id_film) {
-        
+
         ArrayList<Integer> resafilm = m_s.getResa_film(id_film);
         for (int i = 0; i < resafilm.size(); i++) {
-            
+
             combobox.addItem(m_s.getsalle(resafilm.get(i)));
-            
+
         }
         combobox.setBounds(50, 50, 90, 20);
         combobox.addActionListener(new ActionListener() {
-            
+
             @Override
             public void actionPerformed(ActionEvent e) {
                 // setTitre();
@@ -475,9 +494,9 @@ public class MyController {
         InterSalle.pack();
         InterSalle.setLocationRelativeTo(null);
         InterSalle.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+
     }
-    
+
     public void VérificationPlacesDisponibles(MyController c, int idsalle, javax.swing.JLabel Label) {
 // on fait une boucle if else pour vérifier si il reste des places ou pas 
         if (m_s.get_places_libres(idsalle) != 0) {
@@ -488,13 +507,52 @@ public class MyController {
             Label.setText("plus de places disponibles");
         }
     }
-    
+
     public void AffichageInterfacePaiement(MyController c, int idsalle) {
-        InterfacePaiement InterfacePaiement = new InterfacePaiement(c, idsalle,  f.getNom(m_s.get_ID_film(idsalle)));
+
+        String membre = m_client.getMembre();
+        String user;
+
+        int prix;
+//On fait des if et pas un switch au cas où l'utilisateur n'est pas connecté pour que le prix se set quand même
+// Sinon vu que membre n'était pas initialisé ça ne marchait pas 
+        if ("Regulier".equals(membre)) {
+            prix = m_tarif.getRegulier();
+            user = m_client.getUser();
+        } else if ("Enfant".equals(membre)) {
+            prix = m_tarif.getEnfant();
+            user = m_client.getUser();
+        } else if ("Senior".equals(membre)) {
+            prix = m_tarif.getSenior();
+            user = m_client.getUser();
+        } else {
+            prix = m_tarif.getPleinTarif();
+            if (!"PleinTarif".equals(membre)) {
+                user = "Invitee";
+                membre = "Plein tarif";
+            } else {
+                user = m_client.getUser();
+            }
+
+        }
+
+        InterfacePaiement InterfacePaiement = new InterfacePaiement(c, idsalle, prix, membre, user, f.getNom(m_s.get_ID_film(idsalle)));
         InterfacePaiement.setVisible(true);
         InterfacePaiement.pack();
         InterfacePaiement.setLocationRelativeTo(null);
         InterfacePaiement.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
-    
+
+    public void Prendre_place(int idSalle, int tarif, String user) throws SQLException, ClassNotFoundException {
+        System.out.println(m_cine_salles.get_places_libres(idSalle));
+        this.m_cine_salles.prendre_une_place(idSalle);
+        System.out.println(m_cine_salles.get_places_libres(idSalle));
+        this.m_historique_resa.ajout_reservations(user, idSalle, tarif);
+        Client client_tampon = this.m_client;
+        MyController c = new MyController(client_tampon);
+        AfficheInterfaceFilm(c);
+
+    }
+
 }

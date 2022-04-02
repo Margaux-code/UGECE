@@ -211,7 +211,9 @@ public class InterfaceSalle extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
+        this.dispose();
         m_controler.VérificationPlacesDisponibles(m_controler, ID_salle, Labelplusdeplaces);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public void main(String args[]) {

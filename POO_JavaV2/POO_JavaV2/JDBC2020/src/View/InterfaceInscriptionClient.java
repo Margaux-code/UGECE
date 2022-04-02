@@ -34,7 +34,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
     public InterfaceInscriptionClient(MyController c) {
         initComponents();
         this.setLocationRelativeTo(null);
-        recupAbonnement = "PleinTarif";
+        recupAbonnement = null;
         recupMdp = null;
         recupMail = null;
         recupFact = null;

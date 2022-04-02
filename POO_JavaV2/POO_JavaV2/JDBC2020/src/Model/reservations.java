@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class reservations {
 
     private ArrayList<Integer> m_ID_reservation = new ArrayList<>();
-    private ArrayList<Integer> m_ID_client = new ArrayList<>();
+    private ArrayList<String> m_ID_client = new ArrayList<>();
     private ArrayList<Integer> m_ID_salle = new ArrayList<>();
     private ArrayList<Integer> m_ID_tarif = new ArrayList<>();
     final private Connexion c;
@@ -36,7 +36,7 @@ public class reservations {
             this.sql = "SELECT ID_Salle, ID_Tarif, Id_clients,  ID_Reservation FROM `reservations` ";
             res = this.stmt.executeQuery(this.sql);
             while (res.next()) {
-                this.m_ID_client.add(res.getInt("Id_clients"));
+                this.m_ID_client.add(res.getString("Id_clients"));
                 this.m_ID_reservation.add(res.getInt("ID_Reservation"));
                 this.m_ID_salle.add(res.getInt("ID_Salle"));
                 this.m_ID_tarif.add(res.getInt("ID_Tarif"));
@@ -52,7 +52,7 @@ public class reservations {
     
     
     //  créer une nouvelle réservation
-    public void ajout_reservations(int ID_client, int ID_salle, int ID_tarif) {
+    public void ajout_reservations(String ID_client, int ID_salle, int ID_tarif) {
 
         this.m_ID_client.add(ID_client);
         this.m_ID_salle.add(ID_salle);
