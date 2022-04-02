@@ -63,6 +63,8 @@ this.m_idfilm=idfilm;
         jLabel4 = new javax.swing.JLabel();
         ButtonRetour = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Labelplusdeplaces = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -102,6 +104,11 @@ this.m_idfilm=idfilm;
         });
 
         jButton2.setText("Prendre une place");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -140,13 +147,19 @@ this.m_idfilm=idfilm;
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelTitrefilm))))
+                                .addComponent(LabelTitrefilm))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(Labelplusdeplaces)
+                                .addGap(104, 104, 104))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(ButtonRetour))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(251, 251, 251)
-                        .addComponent(jButton2)))
+                        .addComponent(jButton2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(299, 299, 299)
+                        .addComponent(jLabel6)))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -180,7 +193,11 @@ this.m_idfilm=idfilm;
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addGap(29, 29, 29)
+                .addComponent(Labelplusdeplaces)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
 
         pack();
@@ -191,6 +208,10 @@ this.m_idfilm=idfilm;
 m_controler.AffichageInfoFilm(m_controler,m_idfilm);
 
     }//GEN-LAST:event_ButtonRetourActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        m_controler.VérificationPlacesDisponibles(m_controler, ID_salle,Labelplusdeplaces);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -234,6 +255,7 @@ m_controler.AffichageInfoFilm(m_controler,m_idfilm);
     private javax.swing.JLabel Labeldatefilm;
     private javax.swing.JLabel Labelnbplacelibre;
     private javax.swing.JLabel Labelnbplacestotales;
+    private javax.swing.JLabel Labelplusdeplaces;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -241,6 +263,7 @@ m_controler.AffichageInfoFilm(m_controler,m_idfilm);
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables

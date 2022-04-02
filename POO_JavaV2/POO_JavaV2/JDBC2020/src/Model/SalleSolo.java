@@ -32,8 +32,14 @@ public class SalleSolo {
         return String.valueOf(this.m_ID_salle);
     }
 
+// on récupère l'id de la salle
     public int getID() {
         return this.m_ID_salle;
+    }
+
+// on récupere le nombre de place disponible dans la salle
+    public int getPlacesLibre() {
+        return this.m_places_libre;
     }
 
 }

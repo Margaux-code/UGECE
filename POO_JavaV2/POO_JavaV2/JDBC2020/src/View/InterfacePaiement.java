@@ -15,15 +15,17 @@ public class InterfacePaiement extends javax.swing.JFrame {
 //Attribut 
     private MyController m_controler;
     private int m_idsalle;
-    
+    private String m_nomfilm;
+
 // constructeur de la classe
-    public InterfacePaiement(MyController controler, int idsalle) {
+    public InterfacePaiement(MyController controler, int idsalle, String nomfilm) {
         initComponents();
         this.m_controler = controler;
         this.m_idsalle = idsalle;
+        this.m_nomfilm = nomfilm;
+        LabelTitreFilm.setText(nomfilm);
         
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -192,7 +194,7 @@ public class InterfacePaiement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        m_controler.InterfaceSalleView(m_controler, m_idsalle);
+        m_controler.AffichageInterfaceSalle(m_controler, m_idsalle);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -225,7 +227,7 @@ public class InterfacePaiement extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfacePaiement(m_controler, m_idsalle).setVisible(true);
+                new InterfacePaiement(m_controler, m_idsalle, m_nomfilm).setVisible(true);
             }
         });
     }

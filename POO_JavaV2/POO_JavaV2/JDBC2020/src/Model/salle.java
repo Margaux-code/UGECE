@@ -145,7 +145,7 @@ public class salle {
 
         Connexion c = new Connexion("bdd ugece", "root", "");
         salle s = new salle(c);
-        s.ajouter_salle(50, "7", 1);
+        s.ajouter_salle(0, "24", 3);
 
 
     }
