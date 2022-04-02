@@ -109,11 +109,11 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Mot de passe:");
+        jLabel4.setText("Mot de passe :");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Nom d'utilisateur:");
+        jLabel5.setText("Nom d'utilisateur :");
 
         SaisieUser.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         SaisieUser.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +141,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Adresse e-mail:");
+        jLabel6.setText("Adresse e-mail :");
 
         SaisieMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         SaisieMail.addActionListener(new java.awt.event.ActionListener() {
@@ -209,7 +209,7 @@ public class InterfaceInscriptionClient extends javax.swing.JFrame {
                         .addComponent(AbonnementSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
                         .addComponent(AbonnementEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

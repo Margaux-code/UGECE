@@ -58,7 +58,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
         RetourAccueil.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         RetourAccueil.setForeground(new java.awt.Color(255, 255, 255));
         RetourAccueil.setText("Retour");
-        RetourAccueil.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RetourAccueil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         RetourAccueil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 RetourAccueilMouseClicked(evt);
@@ -92,11 +92,11 @@ public class InterfaceEmployé extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Mot de passe:");
+        jLabel4.setText("Mot de passe :");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Adresse e-mail:");
+        jLabel5.setText("Adresse e-mail :");
 
         SaisieMail.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
 
@@ -139,7 +139,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(SaisieMdp, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(SaisieMail))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

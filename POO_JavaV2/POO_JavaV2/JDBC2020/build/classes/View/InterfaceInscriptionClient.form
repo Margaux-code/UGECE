@@ -68,7 +68,7 @@
                           <Component id="AbonnementEnfant" min="-2" pref="77" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="119" max="32767" attributes="0"/>
+                  <EmptySpace pref="111" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -181,7 +181,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Mot de passe:"/>
+            <Property name="text" type="java.lang.String" value="Mot de passe :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
@@ -192,7 +192,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Nom d&apos;utilisateur:"/>
+            <Property name="text" type="java.lang.String" value="Nom d&apos;utilisateur :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="SaisieUser">
@@ -240,7 +240,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Adresse e-mail:"/>
+            <Property name="text" type="java.lang.String" value="Adresse e-mail :"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="SaisieMail">

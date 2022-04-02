@@ -94,7 +94,7 @@ public class Accueil extends javax.swing.JFrame {
         BoutonInterfaceCinema.setBackground(new java.awt.Color(52, 45, 113));
         BoutonInterfaceCinema.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         BoutonInterfaceCinema.setForeground(new java.awt.Color(255, 255, 255));
-        BoutonInterfaceCinema.setText("Cinema");
+        BoutonInterfaceCinema.setText("Cinéma");
         BoutonInterfaceCinema.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoutonInterfaceCinemaActionPerformed(evt);

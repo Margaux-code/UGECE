@@ -94,7 +94,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
         titrePageFIlm.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         titrePageFIlm.setForeground(new java.awt.Color(255, 255, 255));
-        titrePageFIlm.setText("Bienvenue sur la page d'acceuil");
+        titrePageFIlm.setText("Bienvenue sur la page d'accueil");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -116,11 +116,11 @@ public class InterfaceFilm extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(108, 122, 137));
 
         ListeAvantage.setBackground(new java.awt.Color(153, 153, 153));
-        ListeAvantage.setText("Ma liste Avantage");
+        ListeAvantage.setText("Ma liste avantage");
         ListeAvantage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         MesReservation.setBackground(new java.awt.Color(153, 153, 153));
-        MesReservation.setText("Mes reservation");
+        MesReservation.setText("Mes réservations");
         MesReservation.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         MesReservation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +129,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
         });
 
         retourAcceuil.setBackground(new java.awt.Color(153, 153, 153));
-        retourAcceuil.setText("Acceuil");
+        retourAcceuil.setText("Accueil");
         retourAcceuil.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         retourAcceuil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,7 +183,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("  Prenez vos reservation parmis les films à l'affiche dans notre cinéma");
+        jLabel1.setText("  Prenez vos réservations parmis les films à l'affiche dans notre cinéma");
         jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
         LabelFilmID0.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -271,7 +271,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
             }
         });
 
-        afficherFilm2.setText("Le Chateau Ambulant");
+        afficherFilm2.setText("Le Château ambulant");
         afficherFilm2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afficherFilm2ActionPerformed(evt);
@@ -285,7 +285,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
             }
         });
 
-        afficherFilm3.setText("Your Name");
+        afficherFilm3.setText("Your name");
         afficherFilm3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afficherFilm3ActionPerformed(evt);
