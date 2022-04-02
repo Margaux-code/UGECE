@@ -74,13 +74,13 @@ public class MyController {
         return m_client;
     }
 
-    public void setClient(String User, String mail, String mdp, String membre, String Facture, String Id_resa) {
+    public void setClient(String User, String mail, String mdp, String membre, String Facture, int Id_client) {
         m_client.setUser(User);
         m_client.setMail(mail);
         m_client.setMdp(mdp);
         m_client.setMembre(membre);
         m_client.setFacture(Facture);
-        m_client.setReservation(Id_resa);
+        m_client.setId(Id_client);
     }
 
     //on garde les informations du client connecté dans notre controler
@@ -90,7 +90,7 @@ public class MyController {
         String mdp;
         String membre;
         String facture;
-        String Id_resa;
+        int Id_client;
         Connexion c = new Connexion("bdd ugece", "root", "");
         Connection con = (Connection) c.getConnection();
         PreparedStatement stmt;
@@ -105,9 +105,9 @@ public class MyController {
                 mdp = test.getString("Password");
                 membre = test.getString("Membre");
                 facture = test.getString("Facture");
-                Id_resa = test.getString("Id_reservation");
+                Id_client = test.getInt("Id_client");
                 //on initialise un client connecte
-                Control.setClient(us, mail, mdp, membre, facture, Id_resa);
+                Control.setClient(us, mail, mdp, membre, facture, Id_client);
                 //m_client.afficheClient();
                 ///renvoyé dans le cinéma
                 //controller.affichecinema();
@@ -131,17 +131,17 @@ public class MyController {
 
         //System.out.print("Nom:"+us+" mdp:"+mdp+" Membre:"+membre+" Facture:"+facture+" mail:"+mail);
         PreparedStatement stmt;
-        String sql = "INSERT INTO clients(User,Mail,Membre,Facture,Password)VALUES (?,?,?,?,?)";
+        String sql = "INSERT INTO clients(User,Mail,Membre,Facture,Password,Id_client)VALUES (?,?,?,?,?,null)";
         stmt = con.prepareStatement(sql);
         try {
-
             stmt.setString(1, us);
             stmt.setString(2, mail);
             stmt.setString(3, membre);
             stmt.setString(4, facture);
-            stmt.setString(5, mdp);
+            stmt.setString(5, mdp); 
             stmt.executeUpdate();
         } catch (SQLException e) {
+            
             System.out.println("inscription ratée");
         }
         CookieClient(mail, control);
