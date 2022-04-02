@@ -26,7 +26,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
 //private String m_NomFilmSelection;
 // il faut réussir à montrer que c est bien le bon film 
 
-    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date, String nomdufilmselection,int idfilm) {
+    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date, String nomdufilmselection, int idfilm) {
         initComponents();
         this.ID_salle = idsalle;
         this.m_controler = controller;
@@ -34,7 +34,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
         this.m_places_libre = placeslibre;
         this.m_date = date;
         this.m_nomfilmselection = nomdufilmselection;
-this.m_idfilm=idfilm;
+        this.m_idfilm = idfilm;
         System.out.println(idsalle);
         LabelIDsalle.setText(String.valueOf(idsalle));//affichage de l'id du film
         Labelnbplacestotales.setText(String.valueOf(placestotales));// affichage du nombre de places totales
@@ -147,7 +147,7 @@ this.m_idfilm=idfilm;
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(LabelTitrefilm))
+                                .addComponent(LabelTitrefilm, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(Labelplusdeplaces)
                                 .addGap(104, 104, 104))))
@@ -205,13 +205,13 @@ this.m_idfilm=idfilm;
 
     private void ButtonRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRetourActionPerformed
         this.dispose();
-m_controler.AffichageInfoFilm(m_controler,m_idfilm);
+        m_controler.AffichageInfoFilm(m_controler, m_idfilm);
 
     }//GEN-LAST:event_ButtonRetourActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        this.dispose();
-        m_controler.VérificationPlacesDisponibles(m_controler, ID_salle,Labelplusdeplaces);
+
+        m_controler.VérificationPlacesDisponibles(m_controler, ID_salle, Labelplusdeplaces);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     public void main(String args[]) {
