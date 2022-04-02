@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceConnexion.java</file>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfacePaiement.java</file>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/Accueil.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceClient.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/films.java</file>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceEmployé.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/salle.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/tarifs.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceFilm.java</file>
@@ -13,6 +17,8 @@
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/Client.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/Gestionnaire_reservation.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceSalle.java</file>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceInscriptionClient.java</file>
+            <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/View/InterfaceModifEmployé.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Controller/Connexion.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/reservations.java</file>
             <file>file:/C:/Users/Alix%20Parisot/Desktop/UGECE/POO_JavaV2/POO_JavaV2/JDBC2020/src/Model/SalleSolo.java</file>

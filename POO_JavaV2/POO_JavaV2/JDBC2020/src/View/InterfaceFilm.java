@@ -94,7 +94,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
         titrePageFIlm.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
         titrePageFIlm.setForeground(new java.awt.Color(255, 255, 255));
-        titrePageFIlm.setText("Bienvenue sur la page d'accueil");
+        titrePageFIlm.setText("Bienvenue au cinéma UGECE");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
