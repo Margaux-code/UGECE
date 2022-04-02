@@ -210,6 +210,7 @@ m_controler.AffichageInfoFilm(m_controler,m_idfilm);
     }//GEN-LAST:event_ButtonRetourActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
         m_controler.VérificationPlacesDisponibles(m_controler, ID_salle,Labelplusdeplaces);
     }//GEN-LAST:event_jButton2ActionPerformed
 

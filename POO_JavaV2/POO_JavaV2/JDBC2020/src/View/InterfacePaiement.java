@@ -194,6 +194,7 @@ public class InterfacePaiement extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.dispose();
         m_controler.AffichageInterfaceSalle(m_controler, m_idsalle);
     }//GEN-LAST:event_jButton2ActionPerformed
 

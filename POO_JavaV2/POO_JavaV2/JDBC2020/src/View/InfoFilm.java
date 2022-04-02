@@ -159,6 +159,12 @@ public class InfoFilm extends javax.swing.JFrame {
         jLabel6.setText("Sorti en :");
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
+        ComboBoxSalle.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboBoxSalleActionPerformed(evt);
+            }
+        });
+
         jLabel7.setText("Choisir la salle pour faire une réservation :");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -259,6 +265,11 @@ public class InfoFilm extends javax.swing.JFrame {
         this.dispose();
         m_controler.AfficheInterfaceFilm(m_controler);
     }//GEN-LAST:event_RetourInfoFilmActionPerformed
+
+    private void ComboBoxSalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboBoxSalleActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_ComboBoxSalleActionPerformed
 
     /**
      * @param args the command line arguments
