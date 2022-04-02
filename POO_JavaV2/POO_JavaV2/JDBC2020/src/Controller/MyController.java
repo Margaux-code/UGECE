@@ -25,6 +25,7 @@ import View.InterfaceFilm;// vue de la page d'accueil du cinéma ( où l'on va s
 import View.InfoFilm;// affichage des informations d'un film
 import View.InterfaceModifEmployé;
 import View.InterfacePaiement;// affichage de la page de paiement
+import View.InterfaceReservations;
 import View.InterfaceSalle;//affichage du début de la réservation ( après la sélection d'un salle)
 
 //java/javax
@@ -71,7 +72,7 @@ public class MyController {
     }
 
     // toutes les methodes en static et les variables
-   public MyController(Client client_tampon)throws SQLException, ClassNotFoundException {
+    public MyController(Client client_tampon) throws SQLException, ClassNotFoundException {
 
         Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
         f = new films(c);// Chargement des films
@@ -80,7 +81,6 @@ public class MyController {
         m_s = new salle(c);
         this.m_historique_resa = new reservations(c);
         this.m_cine_salles = new salle(c);
-       
 
     }
 
@@ -545,14 +545,24 @@ public class MyController {
     }
 
     public void Prendre_place(int idSalle, int tarif, String user) throws SQLException, ClassNotFoundException {
-        System.out.println(m_cine_salles.get_places_libres(idSalle));
         this.m_cine_salles.prendre_une_place(idSalle);
-        System.out.println(m_cine_salles.get_places_libres(idSalle));
+
         this.m_historique_resa.ajout_reservations(user, idSalle, tarif);
         Client client_tampon = this.m_client;
         MyController c = new MyController(client_tampon);
         AfficheInterfaceFilm(c);
 
+    }
+
+    public void AfficheReservations(MyController c) {
+        String reservations = m_historique_resa.getResa(m_client.getUser());
+        InterfaceReservations Reservation = new InterfaceReservations(reservations,c);
+                
+       
+        Reservation.setVisible(true);
+        Reservation.pack();
+        Reservation.setLocationRelativeTo(null);
+        Reservation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 }

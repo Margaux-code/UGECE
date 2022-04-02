@@ -22,7 +22,7 @@ Le concept de cette classe est de permettre a un employé de créer une salle av
 Puis on pourra remplir la salle avec des réservations
 On dira que la salle est en placement libre
 
-ATTENTION : la date doit forcément être en format JJ.MM Sans l'année pour que le reste du code corresponde 
+
 
  */
 public class salle {
@@ -71,7 +71,7 @@ public class salle {
         this.m_date.add(date);
         this.m_ID_film.add(ID_film);
         this.m_ID_salle.add(id_tampon);// Met l'id du salle avec 
-        System.out.println("ID_ salle :" + this.m_ID_salle.get(id_tampon));
+       
         this.Sauvegarder(id_tampon);
 
     }
@@ -147,7 +147,10 @@ public class salle {
 
         Connexion c = new Connexion("bdd ugece", "root", "");
         salle s = new salle(c);
-        s.prendre_une_place(0);
+        s.ajouter_salle(75, "29", 0);
+        s.ajouter_salle(80, "19", 1);
+        s.ajouter_salle(75, "15", 2);
+        s.ajouter_salle(25, "29", 4);
 
     }
 }

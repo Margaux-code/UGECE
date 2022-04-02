@@ -42,13 +42,7 @@ public class tarifs {
                 this.prix_regulier = res.getInt("prix_regulier");
                 this.prix_senior = res.getInt("prix_senior");
                 this.plein_tarif = res.getInt("plein_tarif");
-
-                //Afficher les valeurs
-                System.out.print("ID film: " + this.ID_tarif);
-                System.out.print(",prix enfant : " + this.prix_enfant);
-                System.out.print(", prix regulier : " + this.prix_regulier);
-                System.out.println(", plein tarif: " + this.plein_tarif);
-                i++;
+               
             }
 
             //étape 6: fermez l'objet de connexion

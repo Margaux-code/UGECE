@@ -5,6 +5,8 @@
 package View;
 
 import Controller.MyController;
+import Model.Client;
+import Model.salle;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,6 +39,10 @@ private String m_user;
         
         
         
+    }
+
+    InterfacePaiement(Client m_client, salle m_salle, MyController m_controlleur) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
     @SuppressWarnings("unchecked")

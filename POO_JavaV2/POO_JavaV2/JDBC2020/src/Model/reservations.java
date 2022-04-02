@@ -48,7 +48,30 @@ public class reservations {
         }
 
     }    
-    
+    public String getResa(String User)
+    {
+       String salut =""; 
+
+       try {
+           
+            this.sql = "SELECT ID_salle, ID_Reservation, ID_tarif FROM `reservations` WHERE ID_clients = '" + User + "'";
+            res = stmt.executeQuery(sql);
+            
+            while (res.next())
+            {
+              salut += "<html>Reservation a la salle "+ res.getInt("ID_salle");
+              salut += " Numero de votre reservation "+ res.getInt("ID_reservation");
+              salut+= " Vous l'avez payez "+ res.getInt("ID_tarif")+ " €          ";
+              salut += "    ";
+            }
+           
+       }catch (SQLException e) {
+            System.out.println(e);
+        }
+       salut += "<html>";
+      
+     return salut;   
+    }
     
     
     //  créer une nouvelle réservation
@@ -68,7 +91,7 @@ public class reservations {
             this.sql = "DELETE FROM `reservations` WHERE ID_Reservation = " + id_tampon;
             this.stmt.execute(sql);
             this.sql = "INSERT INTO reservations (ID_salle,ID_Reservation,Id_clients,ID_tarif)\n"
-                    + " VALUES (" + this.m_ID_salle.get(id_tampon) + "," + this.m_ID_reservation.get(id_tampon) + "," + this.m_ID_client.get(id_tampon) + "," + this.m_ID_tarif.get(id_tampon) + ")";
+                    + " VALUES ('" + this.m_ID_salle.get(id_tampon) + "','" + this.m_ID_reservation.get(id_tampon) + "','" + this.m_ID_client.get(id_tampon) + "','" + this.m_ID_tarif.get(id_tampon) + "')";
             this.stmt.execute(sql);
 
         } catch (SQLException e) {
@@ -79,6 +102,14 @@ public class reservations {
     public ArrayList<Integer> getPrix()
     {
         return this.m_ID_tarif;
+    }
+    
+        public static void main(String[] args) throws SQLException, ClassNotFoundException {
+
+        Connexion c = new Connexion("bdd ugece", "root", "");
+        reservations r = new reservations(c);
+       
+
     }
       
       

@@ -399,6 +399,8 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
     private void MesReservationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MesReservationActionPerformed
         // TODO add your handling code here:
+        this.dispose();
+        m_controler.AfficheReservations(m_controler);
 
     }//GEN-LAST:event_MesReservationActionPerformed
 
