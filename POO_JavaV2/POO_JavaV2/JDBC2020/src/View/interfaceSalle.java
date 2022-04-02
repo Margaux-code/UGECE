@@ -22,10 +22,11 @@ public class InterfaceSalle extends javax.swing.JFrame {
     private int m_places_libre;
     private String m_date;
     private String m_nomfilmselection;
+    private int m_idfilm;
 //private String m_NomFilmSelection;
 // il faut réussir à montrer que c est bien le bon film 
 
-    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date, String nomdufilmselection) {
+    public InterfaceSalle(MyController controller, int idsalle, int placestotales, int placeslibre, String date, String nomdufilmselection,int idfilm) {
         initComponents();
         this.ID_salle = idsalle;
         this.m_controler = controller;
@@ -33,6 +34,7 @@ public class InterfaceSalle extends javax.swing.JFrame {
         this.m_places_libre = placeslibre;
         this.m_date = date;
         this.m_nomfilmselection = nomdufilmselection;
+this.m_idfilm=idfilm;
         System.out.println(idsalle);
         LabelIDsalle.setText(String.valueOf(idsalle));//affichage de l'id du film
         Labelnbplacestotales.setText(String.valueOf(placestotales));// affichage du nombre de places totales
@@ -59,77 +61,100 @@ public class InterfaceSalle extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         Labelnbplacestotales = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        ButtonRetour = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("SALLE No: ");
+        jLabel1.setText("SALLE No : ");
 
+        LabelIDsalle.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         LabelIDsalle.setText("ID");
 
-        jLabel3.setText("Vous avez sélectionné le film: ");
+        jLabel3.setText("Vous avez sélectionné le film : ");
 
+        LabelTitrefilm.setFont(new java.awt.Font("Tahoma", 2, 16)); // NOI18N
         LabelTitrefilm.setText("Titre du film");
 
-        jLabel5.setText("La séance est le:");
+        jLabel5.setText("La séance est le :");
 
         Labeldatefilm.setText("Heure du film");
 
-        jLabel7.setText("Il reste: ");
+        jLabel7.setText("Il reste : ");
 
+        Labelnbplacelibre.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         Labelnbplacelibre.setText("Nombre de places restantes ");
 
         jLabel9.setText("places.");
 
         jLabel2.setText("Nombre de places totales : ");
 
+        Labelnbplacestotales.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         Labelnbplacestotales.setText("Nombre de places totales");
 
         jLabel4.setText("avril 2022");
+
+        ButtonRetour.setText("retour");
+        ButtonRetour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonRetourActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Prendre une place");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(161, 161, 161)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35)
-                        .addComponent(LabelIDsalle))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(161, 161, 161)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelIDsalle))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addComponent(Labeldatefilm)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelTitrefilm)
-                            .addComponent(jLabel4)))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel2)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(Labelnbplacestotales))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(91, 91, 91)
-                                    .addComponent(jLabel10))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(Labelnbplacelibre)
-                                    .addGap(32, 32, 32)
-                                    .addComponent(jLabel9))))))
-                .addContainerGap(159, Short.MAX_VALUE))
+                                .addComponent(Labeldatefilm)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Labelnbplacestotales))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(91, 91, 91)
+                                        .addComponent(jLabel10))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(Labelnbplacelibre)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel9))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelTitrefilm))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(ButtonRetour))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(251, 251, 251)
+                        .addComponent(jButton2)))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(69, 69, 69)
+                .addContainerGap()
+                .addComponent(ButtonRetour)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(LabelIDsalle))
@@ -153,11 +178,19 @@ public class InterfaceSalle extends javax.swing.JFrame {
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel10)
-                .addContainerGap(158, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton2)
+                .addContainerGap(111, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButtonRetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRetourActionPerformed
+        this.dispose();
+m_controler.AffichageInfoFilm(m_controler,m_idfilm);
+
+    }//GEN-LAST:event_ButtonRetourActionPerformed
 
     public void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -189,17 +222,19 @@ public class InterfaceSalle extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new InterfaceSalle(m_controler, ID_salle, m_places_totales, m_places_libre, m_date, m_nomfilmselection).setVisible(true);
+                new InterfaceSalle(m_controler, ID_salle, m_places_totales, m_places_libre, m_date, m_nomfilmselection, m_idfilm).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonRetour;
     private javax.swing.JLabel LabelIDsalle;
     private javax.swing.JLabel LabelTitrefilm;
     private javax.swing.JLabel Labeldatefilm;
     private javax.swing.JLabel Labelnbplacelibre;
     private javax.swing.JLabel Labelnbplacestotales;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

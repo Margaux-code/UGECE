@@ -472,7 +472,7 @@ public class MyController {
 // méthode qui va nous permettre d'appeler la classe view interfaceSalle
     public void InterfaceSalleView(MyController c, int idsalle) {
 //InterfaceSalle InterfaceSalle = new InterfaceSalle();
-        InterfaceSalle InterSalle = new InterfaceSalle(c,idsalle, m_s.get_places_totales(idsalle), m_s.get_places_libres(idsalle), m_s.get_date(idsalle),f.getNom(m_s.get_ID_film(idsalle)));
+        InterfaceSalle InterSalle = new InterfaceSalle(c,idsalle, m_s.get_places_totales(idsalle), m_s.get_places_libres(idsalle), m_s.get_date(idsalle),f.getNom(m_s.get_ID_film(idsalle)),m_s.get_ID_film(idsalle));
         InterSalle.setVisible(true);
         InterSalle.pack();
         InterSalle.setLocationRelativeTo(null);
