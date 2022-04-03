@@ -64,6 +64,7 @@ private String m_user;
         jLabel10 = new javax.swing.JLabel();
         jTextFieldnumcrypto = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
@@ -101,6 +102,9 @@ private String m_user;
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        jLabel5.setText("€");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -113,11 +117,13 @@ private String m_user;
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(LabelTitreFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LabelTitreFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(Prix))
+                                .addComponent(Prix)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -136,7 +142,7 @@ private String m_user;
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(206, 206, 206)
                         .addComponent(jButton1)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +154,8 @@ private String m_user;
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(Prix))
+                    .addComponent(Prix)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
@@ -289,6 +296,7 @@ private String m_user;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

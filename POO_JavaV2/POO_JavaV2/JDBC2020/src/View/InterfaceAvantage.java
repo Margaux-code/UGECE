@@ -85,12 +85,13 @@ public class InterfaceAvantage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jButton1))
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(108, 122, 137));
 
-        jLabel2.setText("Voici la liste des trois types de tarifs que possède notre cinéma:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel2.setText("Voici la liste des trois types de tarifs que proposé dans notre cinéma:");
 
         jLabel3.setText("Tarifs enfants (-14 ans ):");
 
@@ -112,12 +113,16 @@ public class InterfaceAvantage extends javax.swing.JFrame {
         LabelPleintarifs.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         LabelPleintarifs.setText("jLabel7");
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel7.setText("€");
 
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel8.setText("€");
 
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel9.setText("€");
 
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         jLabel10.setText("€");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -133,10 +138,10 @@ public class InterfaceAvantage extends javax.swing.JFrame {
                         .addGap(93, 93, 93)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(LabelSenior)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel9))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel6)
@@ -145,19 +150,17 @@ public class InterfaceAvantage extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel10))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(LabelTarifEnfant)))
+                                .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(LabelRegulier)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel8)))))))
+                                .addComponent(LabelTarifEnfant)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(LabelRegulier)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8)))))
                 .addContainerGap(117, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -200,8 +203,7 @@ public class InterfaceAvantage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 3, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
