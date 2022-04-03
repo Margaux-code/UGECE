@@ -4,5 +4,5 @@ Le thème de ce projet est Cinéma. L'objectif est d'écrire une application de 
 Nous avons donc crée une base de donnée pour gérer la base de donnée, codé en java les algorithmes et fait une interface utilisateur avec la bibliothèque Swing en java.
 Nous avons utilisé Wamp et php myadmin et mySQL pour la base de donnée et NetBeans comme IDE.
 
-Réalisé par Cyriac Colin de Verdière, Matthieu Gascon, Alix Parisot, Margaux P. de Langautier.
+Réalisé par Cyriac, Matthieu, Alix, Margaux.
 Avril 2022
