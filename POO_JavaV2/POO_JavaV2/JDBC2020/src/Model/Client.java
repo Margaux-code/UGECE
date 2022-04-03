@@ -16,6 +16,11 @@ import static jdk.nashorn.internal.runtime.regexp.joni.Syntax.Java;
  *
  * @author matth
  */
+
+/**
+ * Classe gardant les clients en mémoire 
+ * @author marga
+ */
 public class Client {
 
     private String User = null;

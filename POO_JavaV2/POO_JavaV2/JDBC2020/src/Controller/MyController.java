@@ -543,7 +543,7 @@ public class MyController {
         InterfacePaiement.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
-
+//Fonction permettant de prendre une place après le paiment et renvoie sur l'interface
     public void Prendre_place(int idSalle, int tarif, String user) throws SQLException, ClassNotFoundException {
         this.m_cine_salles.prendre_une_place(idSalle);
 

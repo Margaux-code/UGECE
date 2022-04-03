@@ -42,7 +42,6 @@ public class Accueil extends javax.swing.JFrame {
         ButtonInterfaceClient = new javax.swing.JButton();
         BoutonInterfaceEmploye = new javax.swing.JButton();
         BoutonInterfaceCinema = new javax.swing.JButton();
-        LeBoutonAsupprimer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,18 +100,6 @@ public class Accueil extends javax.swing.JFrame {
             }
         });
 
-        LeBoutonAsupprimer.setText("Le bouton de Cyriac et Alix");
-        LeBoutonAsupprimer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LeBoutonAsupprimerMouseClicked(evt);
-            }
-        });
-        LeBoutonAsupprimer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeBoutonAsupprimerActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -126,10 +113,6 @@ public class Accueil extends javax.swing.JFrame {
                         .addComponent(ButtonInterfaceClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(186, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(LeBoutonAsupprimer)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,9 +124,7 @@ public class Accueil extends javax.swing.JFrame {
                 .addComponent(BoutonInterfaceEmploye)
                 .addGap(26, 26, 26)
                 .addComponent(BoutonInterfaceCinema)
-                .addGap(18, 18, 18)
-                .addComponent(LeBoutonAsupprimer, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -178,16 +159,6 @@ public class Accueil extends javax.swing.JFrame {
         this.dispose();
         m_controler.AfficheInterfaceFilm(m_controler);
     }//GEN-LAST:event_BoutonInterfaceCinemaActionPerformed
-
-    private void LeBoutonAsupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeBoutonAsupprimerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_LeBoutonAsupprimerActionPerformed
-
-    private void LeBoutonAsupprimerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LeBoutonAsupprimerMouseClicked
-        // TODO add your handling code here:
-        this.dispose();
-        m_controler.AfficheInterfaceModifEmployé(m_controler);
-    }//GEN-LAST:event_LeBoutonAsupprimerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -229,7 +200,6 @@ public class Accueil extends javax.swing.JFrame {
     private javax.swing.JButton BoutonInterfaceCinema;
     private javax.swing.JButton BoutonInterfaceEmploye;
     private javax.swing.JButton ButtonInterfaceClient;
-    private javax.swing.JButton LeBoutonAsupprimer;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

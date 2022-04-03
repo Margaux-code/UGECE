@@ -21,7 +21,7 @@ import java.util.*;
 
 
 
-/*
+/**
 --INFOS SUR LA CLASSE--
 
 *CHARGEMENT DES FICHIERS*
@@ -58,7 +58,7 @@ public class films {
             Statement stmt = con.createStatement();
             String sql = "SELECT ID_Film , Nom, Genres, Intrigue, Realisateur, Acteurs,Annee,url_images FROM films";
             ResultSet res = stmt.executeQuery(sql);
-            int i = 0;
+         
             while (res.next()) {
 
                 //Récupérer par nom de colonne
@@ -72,18 +72,10 @@ public class films {
                 
                 this.url_image.add(res.getString("url_images"));
                 this.acteurs.add(res.getString("Acteurs"));
-                //Afficher les valeurs
-               /* System.out.print("ID film: " + this.ID_film.get(i));
-                 System.out.print("Acteurs: " + this.acteurs.get(i));
-                System.out.print(", Annee: " + this.annee.get(i));
-                System.out.print(", Nom: " + this.Nom.get(i));
-                System.out.print(", Genres: " + this.genres.get(i));
-                System.out.print(", Intrigue: " + this.intrigue.get(i));
-                System.out.println(", URL: " + this.url_image.get(i));*/
-                i++;
+                          
             }
 
-            //étape 6: fermez l'objet de connexion
+      
             
         } catch (SQLException e) {
             System.out.println(e);
@@ -149,9 +141,5 @@ public class films {
         return this.url_image.get(id);
     }
 
-    /*public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        System.out.println("Hello, World!");
-        Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
-        films f = new films(c);// Chargement des films
-    }*/
+    
 }

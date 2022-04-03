@@ -55,11 +55,6 @@
                   <EmptySpace pref="186" max="32767" attributes="0"/>
               </Group>
               <Component id="jPanel4" alignment="1" max="32767" attributes="0"/>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                  <Component id="LeBoutonAsupprimer" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -72,9 +67,7 @@
                   <Component id="BoutonInterfaceEmploye" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Component id="BoutonInterfaceCinema" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="LeBoutonAsupprimer" min="-2" pref="33" max="-2" attributes="0"/>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace pref="71" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -170,15 +163,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BoutonInterfaceCinemaActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="LeBoutonAsupprimer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Le bouton de Cyriac et Alix"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="LeBoutonAsupprimerMouseClicked"/>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LeBoutonAsupprimerActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

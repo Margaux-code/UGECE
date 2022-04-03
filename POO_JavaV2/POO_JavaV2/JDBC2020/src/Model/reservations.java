@@ -14,7 +14,16 @@ import java.util.ArrayList;
 /**
  *
  * @author marga
+ * 
+ * Classe Reservations : Classe permettant de garder un reçu de toutes les réservations faites par un client
+ * Elle permet donc de récupérer toutes les réservations d'un client 
+ * Et de récupérer les prix qu'on payé ces clients
  */
+
+
+
+
+
 public class reservations {
 
     private ArrayList<Integer> m_ID_reservation = new ArrayList<>();

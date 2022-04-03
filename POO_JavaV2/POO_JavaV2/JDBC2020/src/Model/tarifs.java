@@ -13,6 +13,12 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+/**
+ * 
+ * Classe Tarif : Va aller chercher dans la base de donnée les différents tarifs et les charger dans la classe
+ * Permet aussi de changer les prix dans la base de donnée 
+ * 
+*/
 
 public class tarifs {
 
@@ -52,7 +58,7 @@ public class tarifs {
         }
 
     }
-
+//Getter pour chaque prix :
     public Integer getEnfant() {
         return this.prix_enfant;
     }
@@ -68,7 +74,7 @@ public class tarifs {
     public Integer getPleinTarif() {
         return this.plein_tarif;
     }
-
+// Setter des prix et modifier le prix dans la base de donnée 
     public void setEnfant(Integer prix) throws SQLException {
         this.prix_enfant = prix;
         this.sql = "UPDATE tarifs SET prix_enfant = " + this.prix_enfant;
