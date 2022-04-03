@@ -113,13 +113,13 @@ public class reservations {
         return this.m_ID_tarif;
     }
     
-        public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        /*public static void main(String[] args) throws SQLException, ClassNotFoundException {
 
         Connexion c = new Connexion("bdd ugece", "root", "");
         reservations r = new reservations(c);
        
 
-    }
+    }*/
       
       
 }
