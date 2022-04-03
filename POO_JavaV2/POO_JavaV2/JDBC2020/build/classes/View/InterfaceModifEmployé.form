@@ -208,7 +208,7 @@
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="MettreAjourPrix2" min="-2" pref="208" max="-2" attributes="0"/>
+                              <Component id="AjoutSalle" min="-2" pref="208" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="SaisieNumFilm" min="-2" pref="126" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -253,7 +253,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="MettreAjourPrix2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AjoutSalle" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="SaisieNumFilm" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
                           <Component id="jLabel2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       </Group>
@@ -332,12 +332,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MettreAjourPrixActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="MettreAjourPrix2">
+            <Component class="javax.swing.JButton" name="AjoutSalle">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ajouter une salle "/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MettreAjourPrix2ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AjoutSalleActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="SaisiePrixPleinTarif1">

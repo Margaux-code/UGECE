@@ -189,6 +189,7 @@ public class InterfaceEmployé extends javax.swing.JFrame {
 
     private void ButtonConnexionClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonConnexionClientMouseClicked
         // TODO add your handling code here:
+        //on récupère les saisies pour verifier si elles correspondent avec les infos de la bdd employé
         try {
             m_controler.ConnexionEmploye(SaisieMail.getText(), String.valueOf(SaisieMdp.getPassword()), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
