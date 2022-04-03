@@ -583,10 +583,9 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
         Reservation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    public void AjouterUneSalle(int places, String date, String ID_film) throws SQLException
+    public void AjouterUneSalle(int places, String date, int ID_film) throws SQLException
     {
-        int id = Integer.parseInt(ID_film);              
-        m_s.ajouter_salle(places, date, id);
+        m_s.ajouter_salle(places, date, ID_film);
     }
     public void modifierFilm(int ID_film, int ID_salle) throws SQLException
     {
