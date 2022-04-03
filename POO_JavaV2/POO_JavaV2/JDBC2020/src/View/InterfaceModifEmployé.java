@@ -52,8 +52,11 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         ChangerPrixRegulier = new javax.swing.JTextField();
         ChangerPrixSenior = new javax.swing.JTextField();
-        SaisiePrixPleinTarif = new javax.swing.JTextField();
+        SaisieNumFilm = new javax.swing.JTextField();
         MettreAjourPrix = new javax.swing.JButton();
+        MettreAjourPrix2 = new javax.swing.JButton();
+        SaisiePrixPleinTarif1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -156,9 +159,9 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
             }
         });
 
-        SaisiePrixPleinTarif.addActionListener(new java.awt.event.ActionListener() {
+        SaisieNumFilm.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaisiePrixPleinTarifActionPerformed(evt);
+                SaisieNumFilmActionPerformed(evt);
             }
         });
 
@@ -169,32 +172,61 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
             }
         });
 
+        MettreAjourPrix2.setText("Ajouter une salle ");
+        MettreAjourPrix2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MettreAjourPrix2ActionPerformed(evt);
+            }
+        });
+
+        SaisiePrixPleinTarif1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaisiePrixPleinTarif1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setText("Numéro du film ");
+
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(SaisiePrixPleinTarif, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(81, 81, 81)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(138, 138, 138))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(ChangerPrixEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(ChangerPrixRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(ChangerPrixSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(57, 57, 57)
+                        .addComponent(MettreAjourPrix))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(ChangerPrixEnfant, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(ChangerPrixRegulier, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(29, 29, 29)
-                        .addComponent(ChangerPrixSenior, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(57, 57, 57)
-                .addComponent(MettreAjourPrix)
-                .addContainerGap(182, Short.MAX_VALUE))
+                        .addGap(70, 70, 70)
+                        .addComponent(MettreAjourPrix2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)
+                        .addComponent(SaisieNumFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(101, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(272, 272, 272)
+                    .addComponent(SaisiePrixPleinTarif1, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(324, Short.MAX_VALUE)))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,13 +246,21 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SaisiePrixPleinTarif, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MettreAjourPrix)))
+                        .addComponent(MettreAjourPrix))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(896, Short.MAX_VALUE))
+                .addGap(68, 68, 68)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MettreAjourPrix2)
+                    .addComponent(SaisieNumFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(794, Short.MAX_VALUE))
+            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel7Layout.createSequentialGroup()
+                    .addGap(304, 304, 304)
+                    .addComponent(SaisiePrixPleinTarif1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(897, Short.MAX_VALUE)))
         );
 
         jScrollPane3.setViewportView(jPanel7);
@@ -276,19 +316,29 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ChangerPrixSeniorActionPerformed
 
-    private void SaisiePrixPleinTarifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisiePrixPleinTarifActionPerformed
+    private void SaisieNumFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisieNumFilmActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SaisiePrixPleinTarifActionPerformed
+    }//GEN-LAST:event_SaisieNumFilmActionPerformed
 
     private void MettreAjourPrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MettreAjourPrixActionPerformed
         // TODO add your handling code here:
         
         try {
-            m_controler.MettreAJourPrixFilm(SaisiePrixPleinTarif.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
+            m_controler.MettreAJourPrixFilm(SaisieNumFilm.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceModifEmployé.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_MettreAjourPrixActionPerformed
+
+    private void MettreAjourPrix2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MettreAjourPrix2ActionPerformed
+        // TODO add your handling code here:
+        //m_controler.AjouterUneSalle(100,"13", SaisiePrixPleinTarif1);
+ 
+    }//GEN-LAST:event_MettreAjourPrix2ActionPerformed
+
+    private void SaisiePrixPleinTarif1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisiePrixPleinTarif1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SaisiePrixPleinTarif1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -335,8 +385,11 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
     private javax.swing.JTextField ChangerPrixSenior;
     private javax.swing.JButton LesReservation;
     private javax.swing.JButton MettreAjourPrix;
-    private javax.swing.JTextField SaisiePrixPleinTarif;
+    private javax.swing.JButton MettreAjourPrix2;
+    private javax.swing.JTextField SaisieNumFilm;
+    private javax.swing.JTextField SaisiePrixPleinTarif1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
