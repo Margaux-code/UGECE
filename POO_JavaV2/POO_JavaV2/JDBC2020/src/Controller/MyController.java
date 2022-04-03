@@ -23,20 +23,21 @@ import View.InterfaceConnexion;
 import View.InterfaceEmployé;
 import View.InterfaceFilm;// vue de la page d'accueil du cinéma ( où l'on va sélectionner les films)
 import View.InfoFilm;// affichage des informations d'un film
+import View.InterfaceAvantage;// affichage de l'interface des avantages ( on passe tarifs en paramètre)
 import View.InterfaceModifEmployé;
 import View.InterfacePaiement;// affichage de la page de paiement
-import View.InterfaceReservations;
+import View.InterfaceReservations;// affichage de la liste des réservations 
 import View.InterfaceSalle;//affichage du début de la réservation ( après la sélection d'un salle)
 
 //java/javax
 import java.sql.SQLException;
 import java.sql.*;
 import java.util.*;
-import javax.swing.JFrame;
+import javax.swing.JFrame;// permet de créer un Jframe
 import javax.swing.JOptionPane;
-import java.awt.Color;
+import java.awt.Color;// permet d'afficher une couleur 
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener;// permet d'effectuer un clique
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -50,12 +51,12 @@ import javax.swing.ImageIcon;// afficher l'image en type Icon
  */
 public class MyController {
 
-    Client m_client;
-    private films f;
-    private tarifs m_tarif;
-    private reservations m_historique_resa;
-    private salle m_cine_salles;
-    private salle m_s;
+    Client m_client;// appel de la classe client du package model
+    private films f;// appel de la classe film du package model
+    private tarifs m_tarif;// appel de ma classe tarif du package model
+    private reservations m_historique_resa;// ""
+    private salle m_cine_salles;// ""
+    private salle m_s;// ""
 
     // toutes les methodes en static et les variables
     public MyController() throws SQLException, ClassNotFoundException {
@@ -314,6 +315,17 @@ public class MyController {
         InterfaceInfoFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
+
+public void AffichageInterfaceAvantage(MyController c)
+{
+
+InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(),m_tarif.getRegulier(),m_tarif.getSenior(),m_tarif.getPleinTarif());
+ 
+        InterfaceAvantage.setVisible(true);
+        InterfaceAvantage.pack();
+        InterfaceAvantage.setLocationRelativeTo(null);
+        InterfaceAvantage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+}
 
     public void AfficheClientConnecte(javax.swing.JLabel Bouton, MyController control) {
         if (control.GetClient().getUser() == null) {

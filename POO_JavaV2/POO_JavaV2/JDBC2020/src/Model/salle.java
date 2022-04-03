@@ -71,7 +71,7 @@ public class salle {
         this.m_date.add(date);
         this.m_ID_film.add(ID_film);
         this.m_ID_salle.add(id_tampon);// Met l'id du salle avec 
-       
+
         this.Sauvegarder(id_tampon);
 
     }
@@ -151,6 +151,7 @@ public class salle {
         s.ajouter_salle(80, "19", 1);
         s.ajouter_salle(75, "15", 2);
         s.ajouter_salle(25, "29", 4);
+        s.ajouter_salle(0, "30", 2);
 
     }
 }

@@ -59,7 +59,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(3, 138, 255));
 
-        titrePageFIlm.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        titrePageFIlm.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titrePageFIlm.setForeground(new java.awt.Color(255, 255, 255));
         titrePageFIlm.setText("Page modification employé ");
 

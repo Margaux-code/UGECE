@@ -92,7 +92,7 @@ public class InterfaceFilm extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(3, 138, 255));
 
-        titrePageFIlm.setFont(new java.awt.Font("Arial", 3, 24)); // NOI18N
+        titrePageFIlm.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         titrePageFIlm.setForeground(new java.awt.Color(255, 255, 255));
         titrePageFIlm.setText("Bienvenue au cinéma UGECE");
 
@@ -118,6 +118,11 @@ public class InterfaceFilm extends javax.swing.JFrame {
         ListeAvantage.setBackground(new java.awt.Color(153, 153, 153));
         ListeAvantage.setText("Ma liste avantage");
         ListeAvantage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ListeAvantage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ListeAvantageActionPerformed(evt);
+            }
+        });
 
         MesReservation.setBackground(new java.awt.Color(153, 153, 153));
         MesReservation.setText("Mes réservations");
@@ -170,9 +175,9 @@ public class InterfaceFilm extends javax.swing.JFrame {
                 .addComponent(AffichageUserClient, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30)
                 .addComponent(MesReservation)
-                .addGap(35, 35, 35)
+                .addGap(58, 58, 58)
                 .addComponent(ListeAvantage)
-                .addGap(86, 86, 86)
+                .addGap(63, 63, 63)
                 .addComponent(retourAcceuil)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -448,6 +453,11 @@ public class InterfaceFilm extends javax.swing.JFrame {
         this.dispose();
          m_controler.AffichageInfoFilm(m_controler,5);
     }//GEN-LAST:event_afficherFilm6ActionPerformed
+
+    private void ListeAvantageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListeAvantageActionPerformed
+        this.dispose();
+m_controler.AffichageInterfaceAvantage(m_controler);
+    }//GEN-LAST:event_ListeAvantageActionPerformed
 
     /**
      * @param args the command line arguments
