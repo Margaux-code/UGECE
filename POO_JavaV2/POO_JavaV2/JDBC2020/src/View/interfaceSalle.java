@@ -35,7 +35,6 @@ public class InterfaceSalle extends javax.swing.JFrame {
         this.m_date = date;
         this.m_nomfilmselection = nomdufilmselection;
         this.m_idfilm = idfilm;
-        System.out.println(idsalle);
         LabelIDsalle.setText(String.valueOf(idsalle));//affichage de l'id du film
         Labelnbplacestotales.setText(String.valueOf(placestotales));// affichage du nombre de places totales
         Labelnbplacelibre.setText(String.valueOf(placeslibre));// affichage nombre de places libres ( restante)
