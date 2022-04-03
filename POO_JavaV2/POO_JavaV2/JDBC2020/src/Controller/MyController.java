@@ -293,7 +293,7 @@ public class MyController {
         Employ.setLocationRelativeTo(null);
         Employ.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+  //affichage de la page du cinéma
     public void AfficheInterfaceFilm(MyController c) {
         InterfaceFilm PageFilm = new InterfaceFilm(c);
         PageFilm.setVisible(true);
@@ -301,7 +301,7 @@ public class MyController {
         PageFilm.setLocationRelativeTo(null);
         PageFilm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+   //afficjage de l'interface employé
     public void AfficheInterfaceModifEmployé(MyController c) {
         InterfaceModifEmployé ModifEmployé = new InterfaceModifEmployé(c);
         ModifEmployé.setVisible(true);
@@ -330,7 +330,7 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
         InterfaceAvantage.setLocationRelativeTo(null);
         InterfaceAvantage.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 }
-
+// on affiche dans la page d'accueil le userr du client s'il est connecté
     public void AfficheClientConnecte(javax.swing.JLabel Bouton, MyController control) {
         if (control.GetClient().getUser() == null) {
             Bouton.setForeground(Color.white);
@@ -340,7 +340,7 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
             Bouton.setText(control.GetClient().getUser());
         }
     }
-
+   //affichage de l'image des films dans l'accueil, en fonction de l'id tel url est chargé
     public void AffichageFilm(javax.swing.JLabel LabelFilmID0, javax.swing.JLabel LabelFilmID1, javax.swing.JLabel LabelFilmID2, javax.swing.JLabel LabelFilmID3, javax.swing.JLabel LabelFilmID4, javax.swing.JLabel LabelFilmID5) {
         AfficherFilm0(LabelFilmID0);
 
@@ -354,7 +354,7 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
 
         AfficherFilm5(LabelFilmID5);
     }
-
+   //dans l'accueil si un film est choisit on affiche ses infos
     public void ChoisirFilm(int id, MyController control, javax.swing.JLabel LabelFilm) {
         if (id == 0) {
             control.AfficherFilm0(LabelFilm);
@@ -375,7 +375,7 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
             control.AfficherFilm5(LabelFilm);
         }
     }
-
+ 
     public void AfficherFilm0(javax.swing.JLabel LabelFilmID0) {
 
         try {
@@ -421,13 +421,15 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
         }
 
     }
-
+  //dans l'interface employé on peut changer les prix des abonnements de la bdd
     public void MettreAJourPrixFilm(String PleinTarif, String PRegulier, String PSenior, String PEnfant) throws SQLException {
+        //on transforme les saisies en integer
         Integer PrixEnfant = Integer.valueOf(PEnfant);
         Integer PrixPleinTarif = Integer.valueOf(PleinTarif);
         Integer PrixSenior = Integer.valueOf(PSenior);
         Integer PrixRegulier = Integer.valueOf(PRegulier);
         if ((0 <= PrixPleinTarif) && (PrixPleinTarif <= 20) && (0 <= PrixEnfant) && (PrixEnfant <= 20) && (0 <= PrixSenior) && (PrixSenior <= 20) && (0 <= PrixRegulier) && (PrixRegulier <= 20)) {
+            //on set dans la bdd les nouvelles valeurs
             m_tarif.setPleinTarif(PrixPleinTarif);
             m_tarif.setEnfant(PrixEnfant);
             m_tarif.setSenior(PrixSenior);

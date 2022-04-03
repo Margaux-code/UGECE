@@ -196,12 +196,13 @@ public class InterfaceConnexion extends javax.swing.JFrame {
 
     private void ButtonConnexionClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonConnexionClientMouseClicked
         // TODO add your handling code here:
-
+      //on check si le mdp et l'email correspondent avec la bdd
         try {
             m_controler.checkLoginMdp(SaisieMail.getText(), String.valueOf(SaisieMdp.getPassword()), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {
             Logger.getLogger(InterfaceInscriptionClient.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //Si le check est bon récupère les infos du client 
         try {
             m_controler.CookieClient(SaisieMail.getText(), m_controler);
         } catch (SQLException | ClassNotFoundException ex) {

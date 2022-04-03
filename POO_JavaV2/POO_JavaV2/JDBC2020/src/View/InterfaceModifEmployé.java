@@ -322,7 +322,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
 
     private void MettreAjourPrixActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MettreAjourPrixActionPerformed
         // TODO add your handling code here:
-        
+        // mets à jour les prix des abonnements en fonction des saisies
         try {
             m_controler.MettreAJourPrixFilm(SaisieNumFilm.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
         } catch (SQLException ex) {
