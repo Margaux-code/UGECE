@@ -72,7 +72,7 @@ public class MyController {
 
     }
 
-    // toutes les methodes en static et les variables
+   
     public MyController(Client client_tampon) throws SQLException, ClassNotFoundException {
 
         Connexion c = new Connexion("bdd ugece", "root", "");//Connection à la base de donnée
@@ -94,7 +94,7 @@ public class MyController {
     public Client GetClient() {
         return m_client;
     }
-
+    //set dans un client les informations pour garder en cookie les infos
     public void setClient(String User, String mail, String mdp, String membre, String Facture, int Id_client) {
         m_client.setUser(User);
         m_client.setMail(mail);
@@ -104,7 +104,7 @@ public class MyController {
         m_client.setId(Id_client);
     }
 
-    //on garde les informations du client connecté dans notre controler
+    //on garde les informations du client connecté dans notre controler chargement à partir des infos BDD
     public void CookieClient(String mail, MyController Control) throws SQLException, ClassNotFoundException {
         ResultSet test;
         String us;
@@ -165,6 +165,7 @@ public class MyController {
 
             System.out.println("inscription ratée");
         }
+        //on charge notre client connecté avec toutes les infos de la bdd correspondant à son mail
         CookieClient(mail, control);
         AfficheInterfaceFilm(control);
 
@@ -184,6 +185,7 @@ public class MyController {
             test = stmt.executeQuery();
             if (test.next()) {
                 JOptionPane.showMessageDialog(null, "Client connecté");
+                //on charge notre client connecté avec toutes les infos de la bdd correspondant à son mail
                 CookieClient(mail, control);
                 AfficheInterfaceFilm(control);
                 //m_client.afficheClient();
@@ -232,10 +234,12 @@ public class MyController {
             test = stmt.executeQuery();
             if (test.next()) {
                 JOptionPane.showMessageDialog(null, "Employé connecté");
+                //affichage de la page employé
                 AfficheInterfaceModifEmployé(control);
                 ///renvoyé dans le cinéma
             } else {
                 JOptionPane.showMessageDialog(null, "Employé pas connecté");
+                //on reaffiche la page car connexion echouée
                 AfficheInterfaceEmploye(control);
             }
 
