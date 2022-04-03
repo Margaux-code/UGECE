@@ -576,5 +576,14 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
         Reservation.setLocationRelativeTo(null);
         Reservation.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
+    public void AjouterUneSalle(int places, String date, int ID_film) throws SQLException
+    {
+        m_s.ajouter_salle(places, date, ID_film);
+    }
+    public void modifierFilm(int ID_film, int ID_salle) throws SQLException
+    {
+        m_s.changer_film(ID_film,"13",ID_salle);
+    }
 
 }
