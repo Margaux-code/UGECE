@@ -54,7 +54,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         ChangerPrixSenior = new javax.swing.JTextField();
         SaisieNumFilm = new javax.swing.JTextField();
         MettreAjourPrix = new javax.swing.JButton();
-        MettreAjourPrix2 = new javax.swing.JButton();
+        AjoutSalle = new javax.swing.JButton();
         SaisiePrixPleinTarif1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
@@ -172,10 +172,10 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
             }
         });
 
-        MettreAjourPrix2.setText("Ajouter une salle ");
-        MettreAjourPrix2.addActionListener(new java.awt.event.ActionListener() {
+        AjoutSalle.setText("Ajouter une salle ");
+        AjoutSalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MettreAjourPrix2ActionPerformed(evt);
+                AjoutSalleActionPerformed(evt);
             }
         });
 
@@ -216,7 +216,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                         .addComponent(MettreAjourPrix))
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(70, 70, 70)
-                        .addComponent(MettreAjourPrix2, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AjoutSalle, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
                         .addComponent(SaisieNumFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -252,7 +252,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(68, 68, 68)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(MettreAjourPrix2)
+                    .addComponent(AjoutSalle)
                     .addComponent(SaisieNumFilm, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(794, Short.MAX_VALUE))
@@ -330,11 +330,15 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_MettreAjourPrixActionPerformed
 
-    private void MettreAjourPrix2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MettreAjourPrix2ActionPerformed
-        // TODO add your handling code here:
-        //m_controler.AjouterUneSalle(100,"13", SaisiePrixPleinTarif1);
+    private void AjoutSalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjoutSalleActionPerformed
+        try {
+            // TODO add your handling code here:
+            m_controler.AjouterUneSalle(100,"13", SaisieNumFilm.getText());
+        } catch (SQLException ex) {
+            Logger.getLogger(InterfaceModifEmployé.class.getName()).log(Level.SEVERE, null, ex);
+        }
  
-    }//GEN-LAST:event_MettreAjourPrix2ActionPerformed
+    }//GEN-LAST:event_AjoutSalleActionPerformed
 
     private void SaisiePrixPleinTarif1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaisiePrixPleinTarif1ActionPerformed
         // TODO add your handling code here:
@@ -380,12 +384,12 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AjoutSalle;
     private javax.swing.JTextField ChangerPrixEnfant;
     private javax.swing.JTextField ChangerPrixRegulier;
     private javax.swing.JTextField ChangerPrixSenior;
     private javax.swing.JButton LesReservation;
     private javax.swing.JButton MettreAjourPrix;
-    private javax.swing.JButton MettreAjourPrix2;
     private javax.swing.JTextField SaisieNumFilm;
     private javax.swing.JTextField SaisiePrixPleinTarif1;
     private javax.swing.JLabel jLabel1;
