@@ -68,9 +68,9 @@ public class reservations {
             
             while (res.next())
             {
-              salut += "<html>Reservation a la salle "+ res.getInt("ID_salle");
-              salut += " Numero de votre reservation "+ res.getInt("ID_reservation");
-              salut+= " Vous l'avez payez "+ res.getInt("ID_tarif")+ " €          ";
+              salut += "<html>Réservation à la salle /n"+ res.getInt("ID_salle");
+              salut += " Numéro de votre réservation "+ res.getInt("ID_reservation");
+              salut+= " Vous l'avez payé "+ res.getInt("ID_tarif")+ " €          ";
               salut += "    ";
             }
            
