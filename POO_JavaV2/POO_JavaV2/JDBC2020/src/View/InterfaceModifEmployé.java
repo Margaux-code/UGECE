@@ -129,6 +129,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(108, 122, 137));
+        jPanel7.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabel3.setBackground(new java.awt.Color(108, 122, 137));
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -325,9 +326,8 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 1205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
 
         pack();
@@ -363,7 +363,7 @@ public class InterfaceModifEmployé extends javax.swing.JFrame {
         // TODO add your handling code here:
         // mets à jour les prix des abonnements en fonction des saisies
         try {
-            m_controler.MettreAJourPrixFilm(SaisieNumFilm.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
+            m_controler.MettreAJourPrixFilm(SaisiePrixPleinTarif1.getText(), ChangerPrixRegulier.getText(), ChangerPrixSenior.getText(), ChangerPrixEnfant.getText());
         } catch (SQLException ex) {
             Logger.getLogger(InterfaceModifEmployé.class.getName()).log(Level.SEVERE, null, ex);
         }

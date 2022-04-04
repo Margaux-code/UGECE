@@ -436,6 +436,7 @@ InterfaceAvantage InterfaceAvantage = new InterfaceAvantage(c,m_tarif.getEnfant(
             m_tarif.setRegulier(PrixRegulier);
 
         }
+
     }
 
     public void AfficherFilm3(javax.swing.JLabel LabelFilmID3) {
